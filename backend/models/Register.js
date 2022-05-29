@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const RegisterSchema = {
+const RegisterSchema = new mongoose.Schema({
   email: {
     required: true,
     type: String,
@@ -12,6 +12,6 @@ const RegisterSchema = {
     required: true,
     type: String,
   },
-};
+});
 
 module.exports = RegisterSchema;
