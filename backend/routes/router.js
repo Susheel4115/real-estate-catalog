@@ -1,8 +1,13 @@
 const router = require("express").Router();
 const User = require("../models/User");
 const userLogin = require("../controllers/userLogin");
-router.get("/login", (req, res) => {
+
+router.get("/login",userLogin, (req, res) => {
   res.send("You're in login page");
+  res.json({
+    status:"sucess",
+    data:req.body
+  })
 });
 
 router.post("/post", async (req, res) => {
@@ -22,6 +27,8 @@ router.post("/post", async (req, res) => {
   }
 });
 
-router.post("/login", userLogin);
+// router.post("/login", userLogin);
+
+
 
 module.exports = router;
