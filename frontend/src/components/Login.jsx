@@ -2,8 +2,8 @@ import React from "react";
 
 const Login = () => {
   return (
-    <div className="bg-black h-screen">
-      <div className="bg-white flex py-36 pl-36">
+    <div className="bg-black h-screen mt-0">
+      <div className="bg-white flex m-20">
         <div className="flex-col flex ml-auto mr-auto items-center w-full lg:w-2/3 md:w-3/5">
           <h1 className="font-bold text-xl my-10 text-black"> Login </h1>
           <form action="" className="mt-2 flex flex-col lg:w-1/2 w-8/12">

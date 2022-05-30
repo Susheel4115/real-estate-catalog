@@ -1,9 +1,10 @@
 import React from "react";
-import Login from "./components/Login";
+import Basic from "./components/basicinfo/Basic";
+
 function App() {
   return (
     <div className="App">
-      <Login />
+      <Basic />
     </div>
   );
 }
