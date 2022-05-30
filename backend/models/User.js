@@ -2,17 +2,22 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema({
-  email: {
-    required: true,
-    type: String,
-    match: /.+\@.+\..+/,
-    lowercase: true,
-    unique: true,
-  },
-  password: {
-    required: true,
-    type: String,
-  },
+
+    email: {
+      required: true,
+      type: String,
+      match: /.+\@.+\..+/,
+      lowercase: true,
+      unique: true,
+    },
+    password: {
+      required: true,
+      type: String,
+    },
+
+  
+    
+  
 });
 
 userSchema.pre("save", function (next) {

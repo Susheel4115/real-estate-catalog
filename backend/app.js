@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./connection/connect");
+const dataRouter=require('./routes/data');
 dotenv.config();
 
 const app = express();
@@ -14,6 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/", router);
+app.use(dataRouter);
 
 const startDB = async () => {
   try {
