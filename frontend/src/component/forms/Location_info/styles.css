@@ -20,17 +20,3 @@ input {
   margin-top: 10%;
   margin-left: 10%;
 }
-
-.btn {
-  display: flex;
-  flex-direction: row;
-  border: 2px solid saddlebrown;
-  margin-left: 1%;
-  height: 15%;
-  /* margin-top: 70%; */
-  background: red;
-}
-
-h2 {
-  margin-left: 10%;
-}
