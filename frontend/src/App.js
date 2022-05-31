@@ -1,17 +1,18 @@
 import SignIn from "./component/SignIn";
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import SignUp from "./component/SignUp";
 import UserData from "./component/UserData";
 import Basic from "./component/forms/basicinfo/Basic";
+import Signin from "./component/SignIn";
+import Signup from "./component/SignUp";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/*" element={<SignIn />} />
-        <Route path="/SignUP" element={<SignUp />} />
-        <Route path="/User" element={<UserData />} />
-        <Route path="/property" element={<Basic />} />
+        <Route path="/*" element={<Signin />} />
+        <Route path="/SignUp" element={<Signup />} />
+        <Route path="User" element={<UserData />} />
       </Routes>
     </BrowserRouter>
   );

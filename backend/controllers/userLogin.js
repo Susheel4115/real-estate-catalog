@@ -24,14 +24,14 @@ const userLogin = async (req, res) => {
         findQueryinDB.id
       );
     } else {
-      return res.json({
+      return res.status(403).json({
         status: "not registerd",
         message: "user isn't register",
       
     });
       
-  }} catch (error) {
-    res.send(error);
+  }} catch (error) {res.json({status:'Invalid user',
+                  message:error})
   }
 };
 
@@ -40,9 +40,10 @@ const passwordValidation = (passwordEnteredByUser, hash, res, email, id) => {
   bcrypt.compare(passwordEnteredByUser, hash, function (error, isMatch) {
     console.log(passwordEnteredByUser, hash, isMatch);
     if (error) {
-      res.status(404).json({error:error});
+      res.status(400).json({message:error,
+                      status:"User already register"});
     } else if (!isMatch) {
-      res.status(401).json({
+      res.status(400).json({
         status:"password mismatch"
       }
        );
