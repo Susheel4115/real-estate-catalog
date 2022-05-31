@@ -3,14 +3,49 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 require("dotenv").config();
 
+const userLogin = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    console.log("body is" ,req.body);
+    // var findQueryinDB= false;
+    const findQueryinDB = await User.findOne({ email: req.body.email });
+    console.log("id" ,findQueryinDB);
+    if(!findQueryinDB){
+      console.log('user not found')
+    }
+    console.log('check it')
+    if (findQueryinDB) {
+      console.log('find')
+      passwordValidation(
+        password,
+        findQueryinDB.password,
+        res,
+        email,
+        findQueryinDB.id
+      );
+    } else {
+      return res.json({
+        status: "not registerd",
+        message: "user isn't register",
+      
+    });
+      
+  }} catch (error) {
+    res.send(error);
+  }
+};
+
 const passwordValidation = (passwordEnteredByUser, hash, res, email, id) => {
   console.log(hash);
   bcrypt.compare(passwordEnteredByUser, hash, function (error, isMatch) {
     console.log(passwordEnteredByUser, hash, isMatch);
     if (error) {
-      res.status(404).send(error);
+      res.status(404).json({error:error});
     } else if (!isMatch) {
-      res.status(401).send("password mismatch");
+      res.status(401).json({
+        status:"password mismatch"
+      }
+       );
     } else {
       console.log("In else part");
       // const id = new Date().getDate();
@@ -24,26 +59,6 @@ const passwordValidation = (passwordEnteredByUser, hash, res, email, id) => {
     }
   });
 };
-const userLogin = async (req, res) => {
-  try {
-    const { email, password } = req.body;
-    console.log(req.body);
-    const findQueryinDB = await User.findOne({ email: email });
-    console.log(findQueryinDB.id);
-    if (findQueryinDB) {
-      passwordValidation(
-        password,
-        findQueryinDB.password,
-        res,
-        email,
-        findQueryinDB.id
-      );
-    } else {
-      res.status(404).send("User not found");
-    }
-  } catch (error) {
-    res.send(error);
-  }
-};
+
 
 module.exports = userLogin;
