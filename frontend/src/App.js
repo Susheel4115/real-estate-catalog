@@ -1,8 +1,6 @@
-import SignIn from "./component/SignIn";
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import UserData from "./component/UserData";
-import Basic from "./component/forms/basicinfo/Basic";
+
 import Signin from "./component/SignIn";
 import Signup from "./component/SignUp";
 
