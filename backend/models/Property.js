@@ -34,7 +34,7 @@ const propertySchema = new mongoose.Schema({
     required: true,
     type: Number,
   },
-});
+},{strict: false});
 
 const Property = mongoose.model("Property", propertySchema);
 

@@ -10,20 +10,29 @@ router.get("/login",userLogin, (req, res) => {
   })
 });
 
-router.post("/post", async (req, res) => {
+router.post("/Signup", async (req, res) => {
+  const name   = req.body.email.substring(0, req.body.email.lastIndexOf("@"));
+  const userid = req.body
+  console.log(userid);
   const data = new User({
-    email: req.body.email,
-    password: req.body.password,
+    ...req.body,
+    UserName : name,
+    UserID : userid
   });
+  
   try {
     const dataToSave = await data.save();
-    // user.push(dataToSave);
+    console.log( name );
+    console.log(data);
     res.status(200).json({
       status: "Sucess",
       user: [dataToSave],
     });
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(400).json({
+      staus: "error",
+      message: "user is already register",
+      });
   }
 });
 

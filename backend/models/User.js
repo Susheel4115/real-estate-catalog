@@ -14,11 +14,19 @@ const userSchema = new mongoose.Schema({
       required: true,
       type: String,
     },
-
+    UserName:{
+      type: String
+    }
+    // ,
+    // PPID:{
+    //   type: String
+    // },
+    // UserID:{
+    //   type: String,
+    //   unique: true
+    // }
   
-    
-  
-});
+},{strict:false});
 
 userSchema.pre("save", function (next) {
   const user = this;

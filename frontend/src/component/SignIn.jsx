@@ -1,25 +1,62 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import './CSS-property/SignIn.css';
 
-const SignIn = () => {
+function Signin() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
-    <div className='container'>
-        <div className='signin-container'>
-        <div className='logo'>Logo</div>
-        <div className='signin'>Enter Your Credentials to access your account</div>
-        <form>
-            <input type='text' placeholder='UserID' />
-            <input type='password' placeholder='Password'/>
-            <Link to='/User'><button className='btn' >Sign In</button></Link>
-            <a href='/signup'>sign Up</a>
-            </form>
-            <div className='signup-nav'>Don't have an account? <a href='/SignUp'>signup</a></div>
-        </div>
-        {/* <Route path='/signup' element={<SignUp/>}/> */}
+    <div className="sign-in-parent">
+      <div className="sign-in-form-container">
+        <h1 style={{ color: "#4c57b6" }}>Logo</h1>
+        <p>Enter your credentials to access your Account</p>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            className="UserID"
+            placeholder="Mail ID"
+            name="UserID"
+            value={email}
+            required
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-       
-            </div>
-  )
+          <input
+            className="password"
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            name="password"
+            value={password}
+            required
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+          <span
+            className="eye"
+            onClick={() => {
+              setShowPassword(!showPassword);
+            }}
+          >
+            <img src="" alt="no image" />
+          </span>
+          <Link to='/User'>
+            <button type="submit" className="submit-button">
+              Sign in
+            </button>
+          </Link>
+        </form>
+      </div>
+      <div>
+        <p className="para">Don't have an account?<Link to='/Signup' style={{fontWeight: 'bold'}}> SignUp</Link></p>
+      </div>
+      
+    </div>
+  );
 }
-
-export default SignIn
+export default Signin
