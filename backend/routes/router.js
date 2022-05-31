@@ -23,7 +23,7 @@ router.post("/post", async (req, res) => {
       user: [dataToSave],
     });
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(400).json({ status:"user alreadey register",message: error.message });
   }
 });
 

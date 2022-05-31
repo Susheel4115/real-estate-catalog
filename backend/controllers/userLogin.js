@@ -31,7 +31,11 @@ const userLogin = async (req, res) => {
     });
       
   }} catch (error) {
-    res.send(error);
+    res.json({
+      status:"invalid user",
+      message:error
+    })
+    
   }
 };
 
@@ -40,9 +44,9 @@ const passwordValidation = (passwordEnteredByUser, hash, res, email, id) => {
   bcrypt.compare(passwordEnteredByUser, hash, function (error, isMatch) {
     console.log(passwordEnteredByUser, hash, isMatch);
     if (error) {
-      res.status(404).json({error:error});
+      res.status(400).json({error:error});
     } else if (!isMatch) {
-      res.status(401).json({
+      res.status(400).json({
         status:"password mismatch"
       }
        );
