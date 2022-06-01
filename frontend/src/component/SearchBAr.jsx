@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import React from 'react';
 // import { MDBCol, MDBIcon } from "mdbreact";
 import './search.css'

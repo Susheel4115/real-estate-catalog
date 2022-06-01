@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import '../component/CSS-property/SignUp.css'
 
 function Signup() {
   const [password, setPassword] = useState("");
@@ -10,6 +11,8 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(password !== confirmPassword) return alert("Password doesn't match")
+    
     const data = {
       email:e.target.elements.email.value,
       password:e.target.elements.password.value
