@@ -1,4 +1,5 @@
-import React from 'react'
+import { Link } from 'react-router-dom';
+import React from 'react';
 // import { MDBCol, MDBIcon } from "mdbreact";
 
 const SearchBAr = () => {
@@ -8,7 +9,7 @@ const SearchBAr = () => {
   <form className="form">
   <input className="form-control" type="text" placeholder="Search" aria-label="Search" />
 </form>
-        <button id='search-btn'>Add Property</button>
+        <Link to='/BasicInfo'><button id='search-btn'>Add Property</button></Link> 
         </div>
   )
 }
