@@ -1,16 +1,13 @@
-<<<<<<< HEAD
-import './App.css';
-import SignIn from './component/SignIn';
-import {BrowserRouter,Route,Routes} from 'react-router-dom';
-import SignUp from './component/SignUp';
-import UserData from './component/PropertyPage';
-=======
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import UserData from "./component/UserData";
->>>>>>> 4322a7fc0d207129fcd108408b2ffb5ae58850c4
+
+import UserData from "./component/PropertyPage";
 
 import Signin from "./component/SignIn";
 import Signup from "./component/SignUp";
+
+import Basic from "./component/forms/basicinfo/Basic";
+import Header from "./component/common/Header";
+import SideBar from "./component/common/SideBar";
 
 function App() {
   return (
@@ -19,6 +16,7 @@ function App() {
         <Route path="/*" element={<Signin />} />
         <Route path="/SignUp" element={<Signup />} />
         <Route path="User" element={<UserData />} />
+        <Route path="/basic" element={<Basic />} />
       </Routes>
     </BrowserRouter>
   );

@@ -4,20 +4,29 @@ export default function Basic() {
   return (
     <div className="main">
       <div className="form-container">
-        <h2>Name</h2>
+        <p>Property type</p>
         <input type="text" id="name" placeholder="name" />
+        <p>Price</p>
         <input type="text" id="name" placeholder="name" />
+        <p>Property age</p>
         <input type="text" id="name" placeholder="name" />
-        <input type="text" id="name" placeholder="name" />
-      </div>
-      <div className="form-container">
-        <input type="text" id="name" placeholder="name" />
-        <input type="text" id="name" placeholder="name" />
-        <input type="text" id="name" placeholder="name" />
+        <p>Property Description</p>
         <input type="text" id="name" placeholder="name" />
       </div>
-      <button className="btn">button1</button>
-      <button className="btn">button2</button>
+      <div className="form-container1">
+        <p>Negotiable</p>
+        <input type="text" id="name" placeholder="name" />
+        <p>Ownership</p>
+        <input type="text" id="name" placeholder="name" />
+        <p>Property Approved</p>
+        <input type="text" id="name" placeholder="name" />
+        <p>Bank Loan</p>
+        <input type="text" id="name" placeholder="name" />
+      </div>
+      <div className="b">
+        <button className="btn">button1</button>
+        <button className="btn">button2</button>
+      </div>
     </div>
   );
 }
