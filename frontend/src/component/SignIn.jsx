@@ -43,9 +43,9 @@ function Signin() {
               setShowPassword(!showPassword);
             }}
           >
-            <img src="" alt="no image" />
+            <img src="" alt="no data" />
           </span>
-          <Link to='/User'>
+          <Link to='/property'>
             <button type="submit" className="submit-button">
               Sign in
             </button>

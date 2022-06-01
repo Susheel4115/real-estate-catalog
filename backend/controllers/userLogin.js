@@ -30,17 +30,14 @@ const userLogin = async (req, res) => {
       
     });
       
-<<<<<<< HEAD
+
   }} catch (error) {
     res.json({
       status:"invalid user",
       message:error
     })
     
-=======
-  }} catch (error) {res.json({status:'Invalid user',
-                  message:error})
->>>>>>> 4322a7fc0d207129fcd108408b2ffb5ae58850c4
+
   }
 };
 
@@ -49,12 +46,11 @@ const passwordValidation = (passwordEnteredByUser, hash, res, email, id) => {
   bcrypt.compare(passwordEnteredByUser, hash, function (error, isMatch) {
     console.log(passwordEnteredByUser, hash, isMatch);
     if (error) {
-<<<<<<< HEAD
-      res.status(400).json({error:error});
-=======
-      res.status(400).json({message:error,
-                      status:"User already register"});
->>>>>>> 4322a7fc0d207129fcd108408b2ffb5ae58850c4
+
+      res.status(400).json({
+        message:error,
+      status:"User already register"});
+
     } else if (!isMatch) {
       res.status(400).json({
         status:"password mismatch"

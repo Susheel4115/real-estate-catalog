@@ -30,14 +30,12 @@ router.post("/Signup", async (req, res) => {
       user: [dataToSave],
     });
   } catch (error) {
-<<<<<<< HEAD
-    res.status(400).json({ status:"user alreadey register",message: error.message });
-=======
+
     res.status(400).json({
       staus: "error",
       message: "user is already register",
       });
->>>>>>> 4322a7fc0d207129fcd108408b2ffb5ae58850c4
+
   }
 });
 
