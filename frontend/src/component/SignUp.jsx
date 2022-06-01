@@ -1,14 +1,33 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 function Signup() {
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
   const [confirmPassword, setConfirmPassword] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const data = {
+      email:e.target.elements.email.value,
+      password:e.target.elements.password.value
+    }
+    const JsonResponse = await fetch("http://localhost:5000/Signup", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body:JSON.stringify(data)
+    })
+    const response = await JsonResponse.json();
+    console.log(response);
+    if(response.status === "Sucess"){
+      navigate("/Signin")
+    }
+    else{
+      alert(response.message);
+    }
+    
   };
   return (
     <div className="sign-up-parent">
@@ -19,6 +38,7 @@ function Signup() {
           <input
             type="email"
             className="UserID"
+            id="email"
             placeholder="Mail ID"
             name="UserID"
             value={email}
@@ -30,6 +50,7 @@ function Signup() {
             className="password"
             type="password"
             placeholder="Password"
+            id="password"
             name="password"
             value={password}
             required
@@ -45,11 +66,10 @@ function Signup() {
             required
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
-          <Link to='/AllProperties'>
+          
           <button type="submit" className="submit-button">
             Sign Up
           </button>
-          </Link>
           
         </form>
       </div>
