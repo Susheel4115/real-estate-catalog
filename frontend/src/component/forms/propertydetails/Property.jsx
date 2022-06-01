@@ -1,41 +1,44 @@
 import React from "react";
 import "./styles.css";
+import SideBar from "../../common/SideBar";
+import Header from "../../common/Header";
 export default function Property() {
   return (
-    <div className="main">
-      <div className="form-container">
-        <p>Length</p>
-        <input type="text" id="name" placeholder="name" />
-        <p>Total Area</p>
-        <input type="text" id="name" placeholder="name" />
-        <p>No of BHK</p>
-        <input type="text" id="name" placeholder="name" />
-        <p>Attached</p>
-        <input type="text" id="name" placeholder="name" />
-        <p>Furnished</p>
-        <input type="text" id="name" placeholder="name" />
-        <p>Lift</p>
-        <input type="text" id="name" placeholder="name" />
-        <p>Facing</p>
-        <input type="text" id="name" placeholder="name" />
-      </div>
-      <div className="form-container">
-        <p>Breadth</p>
-        <input type="text" id="name" placeholder="name" />
-        <p>Area unit</p>
-        <input type="text" id="name" placeholder="name" />
-        <p>No of floors</p>
-        <input type="text" id="name" placeholder="name" />
-        <p>western toilet</p>
-        <input type="text" id="name" placeholder="name" />
-        <p>Car parking</p>
-        <input type="text" id="name" placeholder="name" />
-        <p>Electricity</p>
-        <input type="text" id="name" placeholder="name" />
-      </div>
-      <div className="button">
-        <button className="btn">button1</button>
-        <button className="btn">button2</button>
+    <div className="basic">
+      <SideBar />
+      <div className="headform">
+        <Header />
+
+        <div className="main">
+          <form action="">
+            <div className="form">
+              <div className="form-container">
+                <p>Property type</p>
+                <input type="text" id="name" placeholder="name" />
+                <p>Price</p>
+                <input type="text" id="name" placeholder="name" />
+                <p>Property age</p>
+                <input type="text" id="name" placeholder="name" />
+                <p>Property Description</p>
+                <input type="text" id="name" placeholder="name" />
+              </div>
+              <div className="form-container1">
+                <p>Negotiable</p>
+                <input type="text" id="name" placeholder="name" />
+                <p>Ownership</p>
+                <input type="text" id="name" placeholder="name" />
+                <p>Property Approved</p>
+                <input type="text" id="name" placeholder="name" />
+                <p>Bank Loan</p>
+                <input type="text" id="name" placeholder="name" />
+              </div>
+            </div>
+            <div className="button">
+              <button className="btn1">button1</button>
+              <button className="btn2">button2</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

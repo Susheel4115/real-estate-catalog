@@ -9,6 +9,22 @@ export default function Basic() {
       <SideBar />
       <div className="headform">
         <Header />
+        <div className="navbar">
+          <ul>
+            <li>
+              <a href="default.asp">Basic info</a>
+            </li>
+            <li>
+              <a href="news.asp">Property details</a>
+            </li>
+            <li>
+              <a href="contact.asp">General Info</a>
+            </li>
+            <li>
+              <a href="about.asp">Location Info</a>
+            </li>
+          </ul>
+        </div>
 
         <div className="main">
           <form action="">

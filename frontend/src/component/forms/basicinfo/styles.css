@@ -10,6 +10,25 @@
   justify-content: space-between;
 }
 
+li {
+  list-style-type: None;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(53, 50, 50);
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.navbar {
+  padding: 1%;
+  background-color: aliceblue;
+  width: 80%;
+  margin-left: 7%;
+}
 input {
   width: 50vh;
 }
@@ -64,7 +83,7 @@ p {
 
 .btn1 {
   padding: 5%;
-  border-radius: 10px;
+  border-radius: 6px;
 
   width: 15vh;
   background-color: skyblue;
@@ -73,7 +92,7 @@ p {
 
 .btn2 {
   padding: 5%;
-  border-radius: 10px;
+  border-radius: 6px;
 
   background-color: rgb(66, 66, 238);
   cursor: pointer;
