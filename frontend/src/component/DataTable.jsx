@@ -1,6 +1,24 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react';
+import image from '../images/image_icon.png';
+import eye from '../images/eye.png';
+import edit from '../images/edit.png';
+// const [state, dispatch] = useStateValue();
+
+const url = process.env.REACT_APP_API + 'property';
 
 const DataTable = () => {
+  const [data,setData] = useState([]);
+    async function getData() {
+      const response = await fetch(url);
+  
+const data = await response.json();
+setData(data.data.reverse());
+    }
+    useEffect(() => {
+      getData();
+      console.log("anything")
+    }, []);
+
   return (
     <div className='datatable-container'>
         {/* <Table striped bordered hover variant="dark"> */}
@@ -19,41 +37,19 @@ const DataTable = () => {
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td className='ppd'>PPD1125</td>
-        <td className='image'>icon</td>
-        <td className='plot'>Plot</td>
-        <td className='contact'>9785125489</td>
-        <td className='area'>1200</td>
-        <td className='view'>02</td>
-        <td className='status'>Sold</td>
-        <td className='days'>12</td>
-        <td className='action'>icons</td>
+      {data.map(obj=>(
+        <tr>
+        <td className='ppd'>{obj.PPID}</td>
+        <td className='image'><img src={image} alt='aj'/></td>
+        <td className='plot'>{obj.Property}</td>
+        <td className='contact'>{obj.Contact}</td>
+        <td className='area'>{obj.Area}</td>
+        <td className='view'>{obj.Views}</td>
+        <td className='status'>{obj.Status}</td>
+        <td className='days'>{obj.Duration}</td>
+        <td className='action'><img src={eye} alt='eye' /> <img src={edit} alt='edit'/></td>
       </tr>
-      <tr>
-      <td className='ppd'>PPD1125</td>
-        <td className='image'>icon</td>
-        <td className='plot'>Plot</td>
-        <td className='contact'>9785125489</td>
-        <td className='area'>1200</td>
-        <td className='view'>02</td>
-        <td className='status'>Sold</td>
-        <td className='days'>12</td>
-        <td className='action'>icons</td>
-
-      </tr>
-      <tr>
-      <td className='ppd'>PPD1125</td>
-        <td className='image'>icon</td>
-        <td className='plot'>Plot</td>
-        <td className='contact'>9785125489</td>
-        <td className='area'>1200</td>
-        <td className='view'>02</td>
-        <td className='status'>Sold</td>
-        <td className='days'>12</td>
-        <td className='action'>icons</td>
-
-      </tr>
+      ))}
     </tbody>
     </table>
     
