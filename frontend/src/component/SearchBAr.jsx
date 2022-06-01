@@ -1,4 +1,5 @@
-import React from 'react'
+import { Link } from 'react-router-dom';
+import React from 'react';
 // import { MDBCol, MDBIcon } from "mdbreact";
 import './search.css'
 import serach from '../images/search.png'
@@ -19,7 +20,7 @@ const SearchBAr = () => {
           <img className='plus' src={add} alt='data'/> 
           Add Property
           </button>
-        
+
         </div>
   )
 }

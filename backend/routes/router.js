@@ -3,7 +3,7 @@ const User = require("../models/User");
 const userLogin = require("../controllers/userLogin");
 // const user
 
-router.get("/login", userLogin, (req, res) => {
+router.post("/login", userLogin, (req, res) => {
   res.send("You're in login page");
   res.json({
     status: "sucess",
@@ -30,7 +30,6 @@ router.post("/Signup", async (req, res) => {
       user: [dataToSave],
     });
   } catch (error) {
-
     res.status(400).json({
       staus: "error",
       message: "user is already register",

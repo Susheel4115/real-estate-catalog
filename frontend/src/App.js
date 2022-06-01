@@ -1,5 +1,9 @@
 import {BrowserRouter,Route,Routes} from 'react-router-dom';
+
+
 import UserData from './component/PropertyPage';
+import Basic from './component/forms/basicinfo/Basic';
+
 
 
 import Signin from "./component/SignIn";
@@ -9,9 +13,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/*" element={<Signin />} />
+        <Route path="/Signin" element={<Signin />} />
         <Route path="/SignUp" element={<Signup />} />
-        <Route path="property" element={<UserData />} />
+
+        <Route path="/property" element={<UserData />} />
+        <Route path="/BasicInfo" element={<Basic />} />
       </Routes>
     </BrowserRouter>
   );
