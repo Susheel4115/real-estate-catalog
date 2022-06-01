@@ -1,5 +1,6 @@
 import {BrowserRouter,Route,Routes} from 'react-router-dom';
 
+
 import UserData from './component/PropertyPage';
 import Basic from './component/forms/basicinfo/Basic';
 
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/Signin" element={<Signin />} />
         <Route path="/SignUp" element={<Signup />} />
+
         <Route path="/property" element={<UserData />} />
         <Route path="/BasicInfo" element={<Basic />} />
       </Routes>

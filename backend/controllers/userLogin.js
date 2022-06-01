@@ -44,8 +44,9 @@ const passwordValidation = (passwordEnteredByUser, hash, res, email, id) => {
   bcrypt.compare(passwordEnteredByUser, hash, function (error, isMatch) {
     console.log(passwordEnteredByUser, hash, isMatch);
     if (error) {
-      res.status(400).json({message:error,
-                      status:"User already register"});
+      res.status(400).json({
+        message:error,
+      status:"User already register"});
     } else if (!isMatch) {
       res.status(400).json({
         status:"password mismatch"
