@@ -16,6 +16,7 @@ function App() {
         <Route path="/property" element={<UserData />} />
         <Route path="/BasicInfo" element={<Basic />} />
       </Routes>
+      <Routes></Routes>
     </BrowserRouter>
   );
 }

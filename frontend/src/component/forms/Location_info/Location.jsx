@@ -1,5 +1,8 @@
 import React from "react";
 import "./styles.css";
+import Header from "../../common/Header";
+import SideBar from "../../common/SideBar";
+
 export default function Location() {
   return (
     <div className="basic">

@@ -2,6 +2,7 @@ import React from "react";
 import "./styles.css";
 import Header from "../../common/Header";
 import SideBar from "../../common/SideBar";
+import Nav from "../../common/Nav";
 
 export default function Basic() {
   return (
@@ -9,23 +10,7 @@ export default function Basic() {
       <SideBar />
       <div className="headform">
         <Header />
-        <div className="navbar">
-          <ul>
-            <li>
-              <a href="default.asp">Basic info</a>
-            </li>
-            <li>
-              <a href="news.asp">Property details</a>
-            </li>
-            <li>
-              <a href="contact.asp">General Info</a>
-            </li>
-            <li>
-              <a href="about.asp">Location Info</a>
-            </li>
-          </ul>
-        </div>
-
+        {/* <Nav /> */}
         <div className="main">
           <form action="">
             <div className="form">
@@ -51,8 +36,8 @@ export default function Basic() {
               </div>
             </div>
             <div className="button">
-              <button className="btn1">button1</button>
-              <button className="btn2">button2</button>
+              <button className="btn1">Cancel</button>
+              <button className="btn2">Save & continue</button>
             </div>
           </form>
         </div>

@@ -5,9 +5,9 @@ import Header from "../../common/Header";
 export default function Property() {
   return (
     <div className="basic">
-      <SideBar />
+      {/* <SideBar /> */}
       <div className="headform">
-        <Header />
+        {/* <Header /> */}
 
         <div className="main">
           <form action="">
@@ -34,8 +34,8 @@ export default function Property() {
               </div>
             </div>
             <div className="button">
-              <button className="btn1">button1</button>
-              <button className="btn2">button2</button>
+              <button className="btn1">Cancel</button>
+              <button className="btn2">Save & continue</button>
             </div>
           </form>
         </div>

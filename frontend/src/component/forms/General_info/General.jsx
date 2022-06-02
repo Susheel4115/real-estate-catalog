@@ -1,5 +1,7 @@
 import React from "react";
 import "./styles.css";
+import SideBar from "../../common/SideBar";
+import Header from "../../common/Header";
 export default function General() {
   return (
     <div className="basic">
