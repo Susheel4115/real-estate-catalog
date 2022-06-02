@@ -120,7 +120,9 @@ th#contact {
     line-height: 25px;
     color: #284E91;
 }
-
+.ppdid{
+    width: 50px;
+}
 th#area {
     padding-right: 91.48px;
     /* position: absolute; */
@@ -149,6 +151,11 @@ th#views {
     font-size: 20px;
     line-height: 25px;
     color: #284E91;
+}
+td{
+   
+    border-bottom: 1px solid black;
+    padding: 7px;
 }
 
 th#status {
