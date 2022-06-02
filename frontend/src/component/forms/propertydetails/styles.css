@@ -14,3 +14,37 @@
   width: 30%;
 }
 
+
+.form-container1 {
+  margin: 5%;
+  margin-left: 1%;
+  margin-top: 10%;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 30%;
+}
+
+
+.b {
+  margin-top: 40%;
+  margin-left: -40%;
+  display: flex;
+  flex-direction: row;
+}
+.btn {
+  border: 2px solid saddlebrown;
+  margin-left: 7%;
+  cursor: pointer;
+  padding: 7%;
+  box-shadow: 2px 2px 3px 4px;
+  border-radius: 50%;
+}
+
+p {
+  margin-left: 10%;
+  margin-bottom: -7%;
+  margin-top: 1%;
+}
+
