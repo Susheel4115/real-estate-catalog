@@ -1,24 +1,18 @@
 .userData-container {
     display: flex;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     left: 0px;
     top: 0px;
-    border-radius: 0px
+    border-radius: 0px;
 }
 .sidebar-container {
-    width: 28vw;
+    width: 16rem;
     background: #e1f9f4;
 }.sidebar-head {
     height: 44px;
     width: 75px;
-    left: 107px;
-    top: 45px;
-    position: absolute;
-    left: 6.69%;
-    right: 88.62%;
-    top: 4.17%;
-    bottom: 91.76%;
+    margin: 2rem 0 0 5rem;
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 700;
@@ -31,52 +25,50 @@
     margin-left: 10px;
     letter-spacing: 0em;
     text-align: left;
-    /* position: absolute;
-    left: 6%;
-    right: 83.25%;
-    top: 15.74%;
-    bottom: 48.61%; */
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 400;
+    list-style: none;
     font-size: 22px;
     line-height: 35px;
     color: #2289FF;
+}
+.sidedata {
+    display: flex;
+    margin: 2rem 0 0 2rem;
 }
 img {
     margin-right: 0;
 }
 img.property {
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
 }
 
 img.bell {
-    height: 24px;
-    width: 24px;
+    height: 1.5rem;
+    /* width: 24px; */
 }
 
 img.received {
-    height: 32px;
-    width: 32px;
-    margin-left: -5px;
+    height:1.7rem;
+    
 }
 
 img.sent {
-    height: 30px;
-    width: 32px;
-    margin-left: -5px;
+    height: 1.6rem;
+    
 }
 
 img.views{
-    height: 15px;
-    width: 24px;
+    height: 0.9trm;
+    
 }
 
 img.tariff {
-    height: 20px;
+    height: 1.4rem;
+    margin-top: 0.5rem;
     margin-left: 2px;
-    width: 20px;
+    /* width: 20px; */
 }
 
 .viwes {
@@ -88,18 +80,17 @@ img.tariff {
 
 
 .imges {
-    margin: 109px 0 0 36px;
+    margin-top: 0.4rem;
     display: flex;
     flex-direction: column;
-    margin-left: 42px;
 }
 
 img.imgs {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     cursor: pointer;
 }
 
 li.sidebar-text {
-    margin-bottom: 1.35rem;
+    margin-bottom: 0.35rem;
     cursor: pointer;
 }

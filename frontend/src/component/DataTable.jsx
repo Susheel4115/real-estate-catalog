@@ -4,20 +4,27 @@ import eye from '../images/eye.png';
 import edit from '../images/edit.png';
 // const [state, dispatch] = useStateValue();
 
-const url = process.env.REACT_APP_API + 'property';
+const url = process.env.REACT_APP_API + "property";
 
 const DataTable = () => {
   const [data,setData] = useState([]);
+  // const [status,setStatus]=useState('');
     async function getData() {
       const response = await fetch(url);
   
 const data = await response.json();
 setData(data.data.reverse());
+console.log(data.data)
     }
     useEffect(() => {
       getData();
       console.log("anything")
     }, []);
+  //  setStatus({
+  //     if(data.status==="UnSold"){
+  //       data.status="Sold"
+  //     }
+  //   })onClick={setStatus(obj.Status==="sold"? status='Unsold':status="sold")}
 
   return (
     <div className='datatable-container'>
@@ -37,15 +44,15 @@ setData(data.data.reverse());
       </tr>
     </thead>
     <tbody>
-      {data.map(obj=>(
-        <tr>
+      {data.map((obj,idx)=>(
+        <tr key={idx}>
         <td className='ppd'>{obj.PPID}</td>
         <td className='image'><img src={image} alt='aj'/></td>
         <td className='plot'>{obj.Property}</td>
         <td className='contact'>{obj.Contact}</td>
         <td className='area'>{obj.Area}</td>
         <td className='view'>{obj.Views}</td>
-        <td className='status'>{obj.Status}</td>
+        <td className='status' ><button  >{obj.Status}</button></td>
         <td className='days'>{obj.Duration}</td>
         <td className='action'><img src={eye} alt='eye' /> <img src={edit} alt='edit'/></td>
       </tr>
