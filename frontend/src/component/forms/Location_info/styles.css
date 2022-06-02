@@ -39,13 +39,7 @@ input {
   justify-content: space-evenly;
   width: 30%;
 }
-input {
-  border: 1px double black;
-  padding: 2%;
-  margin-top: 10%;
-  margin-left: 10%;
-  margin-bottom: 4%;
-}
+
 
 p {
   margin-left: 10%;
@@ -80,3 +74,4 @@ p {
 
   width: 15vh;
 }
+

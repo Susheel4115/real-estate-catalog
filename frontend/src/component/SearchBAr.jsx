@@ -7,11 +7,11 @@ import line from  '../images/Line.png'
 const SearchBAr = () => {
   return (
     <div className='searchbar-container'>
-  <form className="form">
-  <input className="form-control" type="text" placeholder="     Search PPID" aria-label="Search"  />
+  <form className="form" >
+  <input className="form-control"  type="text" placeholder="     Search PPID" aria-label="Search"  />
   <img className='line' src={line} alt='dta'/> 
 
-  <img id='search' src={serach} alt='data'/>
+  <img id='search'  src={serach} alt='data'/>
 
 </form>
 

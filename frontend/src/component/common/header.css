@@ -11,6 +11,7 @@
     font-size: 20px;
     line-height: 25px;
     color: #B4B4C6;
+    cursor: pointer;
 }
 .header-container {
     height: 9vh;
@@ -21,7 +22,7 @@
 .logout {
     display: flex;
     margin-right: 2vw;
-    margin-left: 52vw;
+    margin-left: 50vw;
     /* left: 10px;
     /* float: right; */
     /* margin-left: 52vw; */
@@ -39,14 +40,17 @@ div.username {
     width: 9rem;
     text-align: left;
     float: right;
+    cursor: pointer;
 }
 img.user {
     height: 21px;
     margin-bottom: -2px;
+    cursor: pointer;
     /* width: 22px; */
 }
 img.down {
     height: 11px;
     width: 18px;
     margin-top: 8px;
+    cursor: pointer;
 }
