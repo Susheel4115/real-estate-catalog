@@ -2,6 +2,7 @@ import React,{useEffect, useState} from 'react';
 import image from '../images/image_icon.png';
 import eye from '../images/eye.png';
 import edit from '../images/edit.png';
+import "./CSS-property/userData.css"
 // const [state, dispatch] = useStateValue();
 
 const url = process.env.REACT_APP_API + "property";
@@ -73,7 +74,7 @@ console.log(data.data)
     <thead>
       <tr>
         <th className='table-head ppdid' id='ppdid'>PPD ID</th>
-        <th className='table-head' id='image'>Image</th>
+        <th className='table-head image-head' id='image'>Image</th>
         <th className='table-head' id='property'>Property</th>
         <th className='table-head' id='contact'>Contact</th>
         <th className='table-head' id='area'>Area</th>
