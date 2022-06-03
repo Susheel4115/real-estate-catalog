@@ -10,11 +10,12 @@ const SearchBAr = ({searchkey, setSearchKey}) => {
 
   return (
     <div className='searchbar-container'>
+
   <form className="form">
   <input className="form-control" type="text" value={searchkey} onChange={(e)=>{setSearchKey(e.target.value)}} placeholder="     Search PPID" aria-label="Search"  />
   <img className='line' src={line} alt='dta'/> 
 
-  <img id='search' src={serach} alt='data'/>
+  <img id='search'  src={serach} alt='data'/>
 
 </form>
 
