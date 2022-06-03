@@ -4,7 +4,7 @@ import image from '../images/image_icon.png';
 import eye from '../images/eye.png';
 import edit from '../images/edit.png';
 import "./CSS-property/userData.css"
-// const [state, dispatch] = useStateValue();
+
 
 const url = process.env.REACT_APP_API + "property";
 
@@ -12,6 +12,7 @@ const url = process.env.REACT_APP_API + "property";
 const DataTable = ({searchkey}) => {
 
   const [data,setData] = useState([]);
+  const [Status, setStatus] = useState("Unsold");
   
     async function getData() {
       const response = await fetch(url);
@@ -20,36 +21,36 @@ const data = await response.json();
 setData(data.data.reverse());
 console.log(data.data)
     }
-    async function saty(status,key){
-      console.log("jse",data[key]);
-      console.log("status :", status)
-      ({...data[key], Status:'new'}) 
-      console.log(data)
-      const st=data.map((idx)=>{
-        if(idx===key){
-         if (status==="Unsold"){
-           return true;
-         }else{
-           return false
-         }
-          }} 
-          )
+    // async function saty(status,key){
+    //   console.log("jse",data[key]);
+    //   console.log("status :", status)
+    //   ({...data[key], Status:'new'}) 
+    //   console.log(data)
+    //   const st=data.map((idx)=>{
+    //     if(idx===key){
+    //      if (status==="Unsold"){
+    //        return true;
+    //      }else{
+    //        return false
+    //      }
+    //       }} 
+    //       )
           
-    }
+    // }
      
     useEffect(() => {
       getData();
-      saty();
+      // saty();
       console.log("anything")
     }, []);
 
     const dataone = data.filter(Element => Element.PPID.includes(searchkey))
 
-    function StatUsc (key) {
-      console.log("data",key);
-      data.map((obj,idx)=>(
-          idx===key ? ((status==="Unsold")?(setStatus("sold")):setStatus("Unsold")):setStatus(status)
-      ))
+    // function StatUsc (key) {
+    //   console.log("data",key);
+    //   data.map((obj,idx)=>(
+    //       idx===key ? ((status==="Unsold")?(setStatus("sold")):setStatus("Unsold")):setStatus(status)
+    //   ))
     //   useEffect(()=>{
     //     // StatUsc();
     //     console.log("nothing");
@@ -69,12 +70,25 @@ console.log(data.data)
       //   )
 
       
-      };
+      // };
      
+    const  handleClick = (obj) => {
+        let updatedList = dataone.map(item => {
+           if(item.id === obj.idx ) {
+             if(item.Status === "Unsold"){
+                setStatus("Sold");
+              }
+               else{
+                 setStatus("Unsold")
+               }
+              }
 
+               }
+        )}
 
   return (
     <>
+    
   
   <div className='datatable-container'>
 
@@ -95,7 +109,7 @@ console.log(data.data)
     </thead>
     <tbody>
 
-      {data.map((obj,idx)=>(
+      {dataone.map((obj,idx)=>(
         <tr key={idx}>
         <td className='ppd ppdid'>{obj.PPID}</td>
         <td className='image'><img src={image} alt='aj'/></td>
@@ -103,7 +117,7 @@ console.log(data.data)
         <td className='contact'>{obj.Contact}</td>
         <td className='area'>{obj.Area}</td>
         <td className='view'>{obj.Views}</td>
-        <td className='status' ><button onClick={()=>saty(obj.Status,idx)} >{obj.Status}</button></td>
+        <td className='status' ><button >{Status}</button></td>
         <td className='days'>{obj.Duration}</td>
         <td className='action'><img src={eye} alt='eye' /> <img src={edit} alt='edit'/></td>
       </tr> 
