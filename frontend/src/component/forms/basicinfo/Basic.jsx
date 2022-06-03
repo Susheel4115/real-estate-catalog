@@ -15,24 +15,64 @@ export default function Basic() {
           <form action="">
             <div className="form">
               <div className="form-container">
-                <p>Property type</p>
-                <input type="text" id="name" placeholder="name" />
-                <p>Price</p>
-                <input type="text" id="name" placeholder="name" />
-                <p>Property age</p>
-                <input type="text" id="name" placeholder="name" />
-                <p>Property Description</p>
-                <input type="text" id="name" placeholder="name" />
+                <h4>Property type</h4>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="name"
+                  className="input"
+                />
+                <h4>Price</h4>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="name"
+                  className="input"
+                />
+                <h4>Property age</h4>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="name"
+                  className="input"
+                />
+                <h4>Property Description</h4>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="name"
+                  className="input"
+                />
               </div>
               <div className="form-container1">
-                <p>Negotiable</p>
-                <input type="text" id="name" placeholder="name" />
-                <p>Ownership</p>
-                <input type="text" id="name" placeholder="name" />
-                <p>Property Approved</p>
-                <input type="text" id="name" placeholder="name" />
-                <p>Bank Loan</p>
-                <input type="text" id="name" placeholder="name" />
+                <h4>Negotiable</h4>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="name"
+                  className="input"
+                />
+                <h4>Ownership</h4>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="name"
+                  className="input"
+                />
+                <h4>Property Approved</h4>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="name"
+                  className="input"
+                />
+                <h4>Bank Loan</h4>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="name"
+                  className="input"
+                />
               </div>
             </div>
             <div className="button">
