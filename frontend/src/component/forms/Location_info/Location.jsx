@@ -11,27 +11,27 @@ export default function Location() {
         <Header />
 
         <div className="main">
-          <form action="">
+          <form action="" className="form-basic">
             <div className="form">
               <div className="form-container">
-                <p>Property type</p>
-                <input type="text" id="name" placeholder="name" />
-                <p>Price</p>
-                <input type="text" id="name" placeholder="name" />
-                <p>Property age</p>
-                <input type="text" id="name" placeholder="name" />
-                <p>Property Description</p>
-                <input type="text" id="name" placeholder="name" />
+                <p  className="p-data">Property type</p>
+                <input type="text" className="name" placeholder="name" />
+                <p className="p-data">Price</p>
+                <input type="text" className="name" placeholder="name" />
+                <p className="p-data">Property age</p>
+                <input type="text" className="name" placeholder="name" />
+                <p className="p-data">Property Description</p>
+                <input type="text" className="name" placeholder="name" />
               </div>
               <div className="form-container1">
-                <p>Negotiable</p>
-                <input type="text" id="name" placeholder="name" />
-                <p>Ownership</p>
-                <input type="text" id="name" placeholder="name" />
-                <p>Property Approved</p>
-                <input type="text" id="name" placeholder="name" />
-                <p>Bank Loan</p>
-                <input type="text" id="name" placeholder="name" />
+                <p className="p-data">Negotiable</p>
+                <input type="text" className="name" placeholder="name" />
+                <p className="p-data">Ownership</p>
+                <input type="text" className="name" placeholder="name" />
+                <p className="p-data">Property Approved</p>
+                <input type="text" className="name" placeholder="name" />
+                <p className="p-data">Bank Loan</p>
+                <input type="text" className="name" placeholder="name" />
               </div>
             </div>
             <div className="button">

@@ -2,7 +2,7 @@
   display: flex;
 }
 
-.form {
+.form-basic {
   display: flex;
   margin: 2%;
   padding: 2%;
@@ -18,18 +18,14 @@ a {
   text-decoration: none;
   color: rgb(53, 50, 50);
 }
-ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+
 .navbar {
   padding: 1%;
   background-color: aliceblue;
   width: 80%;
   margin-left: 7%;
 }
-input {
+.name{
   width: 50vh;
 }
 .main {
@@ -59,8 +55,7 @@ input {
   width: 30%;
 }
 
-
-p {
+.p-data {
   margin-left: 10%;
   margin-bottom: -7%;
   margin-top: 8%;

@@ -41,13 +41,14 @@ img#search {
 }
 button#search-btn {
     margin-top: 0.5rem;
+    margin-left: 32rem;
     background: #8fc7fa;
     width: 11rem;
     height: 3.2rem;
-    position: relative;
-    left: calc(100% - 35rem);
+    /* left: calc(100% - 35rem); */
     font-family: 'Source Sans Pro';
     font-style: normal;
+    /* float: right; */
     font-weight: 600;
     font-size: 20px;
     color: rgba(250, 251, 252, 1);

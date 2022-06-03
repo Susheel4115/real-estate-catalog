@@ -1,17 +1,22 @@
-/* .userData-container {
-    display: flex;
-    height: 1080px;
-    width: 1605px;
-    left: 0px;
-    top: 0px;
-    border-radius: 0px;
+
+
+th#ppdid {
+    width: 8rem;
+    height: 25px;
+    /* position: absolute; */
+    padding-left: 10px;
+    padding-right: 3rem;
+    left: 24.82%;
+    right: 71.62%;
+    top: 25.65%;
+    bottom: 72.04%;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: #284E91;
 }
-
-.header-container {
-    display: flex;
-} */
-
-
 
 .right-side {
     width: calc(100% - 16rem);
@@ -55,15 +60,12 @@ thead {
     top: 255px;
     /* border-radius: 44px; */
 }
-th#ppdid {
-    width: 64px;
-    height: 25px;
-    /* position: absolute; */
-    padding-right: 70.44px;
-    left: 24.82%;
-    right: 71.62%;
-    top: 25.65%;
-    bottom: 72.04%;
+V
+
+th#image {
+    padding-right: 2rem;
+    /* top: 25.65%; */
+    /* bottom: 72.04%; */
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 400;
@@ -71,18 +73,10 @@ th#ppdid {
     line-height: 25px;
     color: #284E91;
 }
-
 th#image {
-    height: 25px;
-    /* margin-left: 80.44px; */
-    /* padding-left: 80.44px; */
-    padding-right: 66.58px;
-    width: 52px;
-    left: 532.47998px;
-    top: 277px;
-    right: 63.35%;
-    top: 25.65%;
-    bottom: 72.04%;
+    padding-right: 2rem;
+    /* top: 25.65%; */
+    /* bottom: 72.04%; */
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 400;
@@ -93,9 +87,9 @@ th#image {
 
 th#property {
     /* position: absolute; */
-    left: 40.82%;
-    right: 54.62%;
-    padding-right: 50.4px;
+    /* left: 40.82%; */
+    /* right: 54.62%; */
+    padding-right: 3rem;
     top: 25.65%;
     bottom: 72.04%;
     font-family: 'Source Sans Pro';
@@ -105,14 +99,13 @@ th#property {
     line-height: 25px;
     color: #284E91;
 }
-
 th#contact {
     /* position: absolute; */
-    left: 48.53%;
-    right: 47.35%;
-    padding-right: 120.4px;
-    top: 25.65%;
-    bottom: 72.04%;
+    /* left: 48.53%; */
+    /* right: 47.35%; */
+    padding-right: 4rem;
+    /* top: 25.65%; */
+    /* bottom: 72.04%; */
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 400;
@@ -120,14 +113,16 @@ th#contact {
     line-height: 25px;
     color: #284E91;
 }
-
+.ppdid {
+    padding-left: 1rem;
+}
 th#area {
-    padding-right: 91.48px;
+    padding-right: 4rem;
     /* position: absolute; */
-    left: 60.17%;
+    /* left: 60.17%;
     right: 37.46%;
     top: 25.65%;
-    bottom: 72.04%;
+    bottom: 72.04%; */
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 400;
@@ -137,12 +132,12 @@ th#area {
 }
 
 th#views {
-    padding-right: 56.66px;
+    padding-right: 3rem;
     /* position: absolute; */
-    left: 68.26%;
-    right: 28.74%;
-    top: 25.65%;
-    bottom: 72.04%;
+    /* left: 68.26%; */
+    /* right: 28.74%; */
+    /* top: 25.65%; */
+    /* bottom: 72.04%; */
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 400;
@@ -150,14 +145,22 @@ th#views {
     line-height: 25px;
     color: #284E91;
 }
+tr{
+    border-radius: 1rem;
+}
+td,tr{
+   
+    border-bottom: 1px solid black;
+    padding: 7px;
+}
 
 th#status {
-    padding-right: 92.06px;
+    padding-right: 4rem;
     /* position: absolute; */
-    left: 74.81%;
-    right: 21.88%;
-    top: 25.65%;
-    bottom: 72.04%;
+    /* left: 74.81%; */
+    /* right: 21.88%; */
+    /* top: 25.65%; */
+    /* bottom: 72.04%; */
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 400;
@@ -167,12 +170,12 @@ th#status {
 }
 
 th#days {
-    padding-right: 49.59px;
+    padding-right: 3rem;
     /* position: absolute; */
-    left: 83.87%;
-    right: 11.38%;
-    top: 25.65%;
-    bottom: 72.04%;
+    /* left: 83.87%; */
+    /* right: 11.38%; */
+    /* top: 25.65%; */
+    /* bottom: 72.04%; */
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 400;
@@ -180,13 +183,12 @@ th#days {
     line-height: 25px;
     color: #284E91;
 }
-
 th#action {
-    
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
+    width: 5rem;
     line-height: 25px;
     color: #284E91;
     cursor: pointer;
