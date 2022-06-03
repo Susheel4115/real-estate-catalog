@@ -2,12 +2,21 @@
   display: flex;
 }
 
-.form {
+.form-basic {
   display: flex;
   margin: 2%;
   padding: 2%;
   margin-right: -25%;
   justify-content: space-between;
+}
+
+li {
+  list-style-type: None;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(53, 50, 50);
 }
 
 .navbar {
@@ -49,6 +58,11 @@
 h4 {
   margin: 3%;
   padding: 1%;
+}
+.p-data {
+  margin-left: 10%;
+  margin-bottom: -7%;
+  margin-top: 8%;
 }
 
 .button {
