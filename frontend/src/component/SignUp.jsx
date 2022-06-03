@@ -15,7 +15,8 @@ function Signup() {
     
     const data = {
       email:e.target.elements.email.value,
-      password:e.target.elements.password.value
+      password:e.target.elements.password.value,
+      UserID:parseInt(Math.random()*10000) 
     }
     const JsonResponse = await fetch("http://localhost:5000/Signup", {
       method: "POST",

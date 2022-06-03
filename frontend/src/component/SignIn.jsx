@@ -4,7 +4,7 @@ import { useState } from "react";
 import './CSS-property/SignIn.css';
 import eye from '../images/eye.png';
 
-function Signin() {
+function Signin({setUser}) {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
@@ -13,7 +13,7 @@ function Signin() {
     e.preventDefault();
     const data = {
       email:e.target.elements.email.value,
-      password:e.target.elements.password.value
+      password:e.target.elements.password.value,
     }
     const JsonResponse = await fetch("http://localhost:5000/login", {
       method: "POST",
@@ -21,8 +21,15 @@ function Signin() {
       body:JSON.stringify(data)
     })
     const response = await JsonResponse.json();
+    console.log(response);
     if(response.status === "Success"){
       navigate("/property")
+      setUser(
+        {
+          UserName:response.UserName,
+          UserID:response.UserID
+        }
+      )
     }
     else{
       alert(response.status);
