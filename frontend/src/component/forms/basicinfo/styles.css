@@ -1,8 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .basic {
   display: flex;
 }
 
-.form-basic {
+.form {
   display: flex;
   margin: 2%;
   padding: 2%;
@@ -40,7 +45,7 @@ a {
   margin-left: 10%;
   padding: 1%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
   width: 70%;
 }
@@ -71,11 +76,11 @@ h4 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 3%;
+  padding: 1%;
 }
 
 .btn1 {
-  padding: 5%;
+  padding: 2%;
   border-radius: 5px;
 
   width: 15vh;
@@ -84,7 +89,7 @@ h4 {
 }
 
 .btn2 {
-  padding: 5%;
+  padding: 2%;
   border-radius: 5px;
   background-color: rgb(66, 66, 238);
   cursor: pointer;

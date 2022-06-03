@@ -12,6 +12,7 @@ const url = process.env.REACT_APP_API + "property";
 const DataTable = ({searchkey}) => {
 
   const [data,setData] = useState([]);
+  // const [status,setStatus]=useState("")
   
     async function getData() {
       const response = await fetch(url);
@@ -45,11 +46,11 @@ console.log(data.data)
 
     const dataone = data.filter(Element => Element.PPID.includes(searchkey))
 
-    function StatUsc (key) {
-      console.log("data",key);
-      data.map((obj,idx)=>(
-          idx===key ? ((status==="Unsold")?(setStatus("sold")):setStatus("Unsold")):setStatus(status)
-      ))
+    // function StatUsc (key) {
+    //   console.log("data",key);
+    //   data.map((obj,idx)=>(
+    //       idx===key ? ((status==="Unsold")?(setStatus("sold")):setStatus("Unsold")):setStatus(status)
+    //   ))
     //   useEffect(()=>{
     //     // StatUsc();
     //     console.log("nothing");
@@ -67,9 +68,9 @@ console.log(data.data)
       //   [...prevValue].map(el => 
       //       el.id === id ? ({...el, name:'new name'}) : el)
       //   )
-
+// onClick={()=>saty(obj.Status,idx)}
       
-      };
+      // };
      
 
 
@@ -78,7 +79,7 @@ console.log(data.data)
   
   <div className='datatable-container'>
 
-        {/* <Table striped bordered hover variant="dark"> */}
+        
     <table>
     <thead>
       <tr>
@@ -95,7 +96,7 @@ console.log(data.data)
     </thead>
     <tbody>
 
-      {data.map((obj,idx)=>(
+      {dataone.map((obj,idx)=>(
         <tr key={idx}>
         <td className='ppd ppdid'>{obj.PPID}</td>
         <td className='image'><img src={image} alt='aj'/></td>
@@ -103,7 +104,7 @@ console.log(data.data)
         <td className='contact'>{obj.Contact}</td>
         <td className='area'>{obj.Area}</td>
         <td className='view'>{obj.Views}</td>
-        <td className='status' ><button onClick={()=>saty(obj.Status,idx)} >{obj.Status}</button></td>
+        <td className='status' ><button  >{obj.Status}</button></td>
         <td className='days'>{obj.Duration}</td>
         <td className='action'><img src={eye} alt='eye' /> <img src={edit} alt='edit'/></td>
       </tr> 

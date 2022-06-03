@@ -4,11 +4,14 @@ import './header.css'
 import down from '../../images/down.png';
 import {useNavigate} from 'react-router-dom';
 
+// 
+// 
+
 const Header = ({user}) => {
   const navigate = useNavigate();
   return (
     <div className='header-container'>
-      <div className='header-id'>USER ID: {"PPID" + user.UserID}</div>
+      <div className='header-id'>USER ID: {"PPID" + user.UserID} </div>
       <div className='logout'>
         <img className='user' src={userIcon} alt='user'/>
 
