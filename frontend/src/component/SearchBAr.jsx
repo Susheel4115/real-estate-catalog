@@ -4,11 +4,14 @@ import './search.css'
 import serach from '../images/search.png'
 import add from '../images/Add_plus.png'
 import line from  '../images/Line.png'
-const SearchBAr = () => {
+
+
+const SearchBAr = ({searchkey, setSearchKey}) => {
+
   return (
     <div className='searchbar-container'>
   <form className="form">
-  <input className="form-control" type="text" placeholder="     Search PPID" aria-label="Search"  />
+  <input className="form-control" type="text" value={searchkey} onChange={(e)=>{setSearchKey(e.target.value)}} placeholder="     Search PPID" aria-label="Search"  />
   <img className='line' src={line} alt='dta'/> 
 
   <img id='search' src={serach} alt='data'/>

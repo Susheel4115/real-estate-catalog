@@ -17,6 +17,7 @@ const userLogin = async (req, res) => {
     if (findQueryinDB) {
       console.log('find')
       passwordValidation(
+        findQueryinDB,
         password,
         findQueryinDB.password,
         res,
@@ -32,15 +33,17 @@ const userLogin = async (req, res) => {
       
 
   }} catch (error) {
+    console.log(error.message)
     res.json({
       status:"invalid user",
       message:error
+
     })
   }
 };
 
-const passwordValidation = (passwordEnteredByUser, hash, res, email, id) => {
-  console.log(hash);
+const passwordValidation = ( findQueryinDB, passwordEnteredByUser, hash, res, email, id) => {
+  console.log("findQueryinDB :", findQueryinDB)
   bcrypt.compare(passwordEnteredByUser, hash, function (error, isMatch) {
     console.log(passwordEnteredByUser, hash, isMatch);
     if (error) {
@@ -61,6 +64,8 @@ const passwordValidation = (passwordEnteredByUser, hash, res, email, id) => {
       res.status(200).json({
         status: "Success",
         token: token,
+        UserName: findQueryinDB.UserName,
+        UserID:findQueryinDB.UserID
       });
     }
   });

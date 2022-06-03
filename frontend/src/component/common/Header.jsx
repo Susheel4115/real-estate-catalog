@@ -1,18 +1,24 @@
 import React from 'react'
 import userIcon from '../../images/User_icon.png'
 import './header.css'
-import down from '../../images/down.png'
+import down from '../../images/down.png';
+import {useNavigate} from 'react-router-dom';
 
-const Header = () => {
+const Header = ({user}) => {
+  const navigate = useNavigate();
   return (
     <div className='header-container'>
-      <div className='header-id'>USER ID: 06PPD125</div>
+      <div className='header-id'>USER ID: {"PPID" + user.UserID}</div>
       <div className='logout'>
         <img className='user' src={userIcon} alt='user'/>
 
-        <div className='username'>USER NAME</div>
+        <div className='username'>{"   " + user.UserName}</div>
 
-        <img className='down' src={down} alt='data'/>
+        <img className='down' src={down} alt='data' onClick={()=>{
+          if(window.confirm("Do you want to logout.!?")){
+            navigate("/")
+          }
+        }}/>
         </div>
   
  

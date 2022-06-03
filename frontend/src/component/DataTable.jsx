@@ -1,3 +1,4 @@
+
 import React,{useEffect, useState} from 'react';
 import image from '../images/image_icon.png';
 import eye from '../images/eye.png';
@@ -6,8 +7,9 @@ import edit from '../images/edit.png';
 
 const url = process.env.REACT_APP_API + 'property';
 
-const DataTable = () => {
+const DataTable = ({searchkey}) => {
   const [data,setData] = useState([]);
+  
     async function getData() {
       const response = await fetch(url);
   
@@ -18,9 +20,13 @@ setData(data.data.reverse());
       getData();
       console.log("anything")
     }, []);
+    const dataone = data.filter(Element => Element.PPID.includes(searchkey))
 
   return (
-    <div className='datatable-container'>
+    <>
+  
+  <div className='datatable-container'>
+
         {/* <Table striped bordered hover variant="dark"> */}
     <table>
     <thead>
@@ -37,7 +43,7 @@ setData(data.data.reverse());
       </tr>
     </thead>
     <tbody>
-      {data.map(obj=>(
+      {dataone.map(obj=>(
         <tr>
         <td className='ppd'>{obj.PPID}</td>
         <td className='image'><img src={image} alt='aj'/></td>
@@ -55,6 +61,7 @@ setData(data.data.reverse());
     
   {/* </Table> */}
   </div>
+  </>
   )
 }
 
