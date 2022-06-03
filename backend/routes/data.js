@@ -17,6 +17,7 @@ router.post('/property', async(req,res)=>{
     res.json({
         status:"sucess",
         data:await data.save(),
+        message:"data added sucessfully"
     });
 });
 

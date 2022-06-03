@@ -1,8 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .basic {
   display: flex;
 }
 
-.form-basic {
+.form {
   display: flex;
   margin: 2%;
   padding: 2%;
@@ -25,8 +30,9 @@ a {
   width: 80%;
   margin-left: 7%;
 }
-.name{
+.input {
   width: 50vh;
+  height: 5vh;
 }
 .main {
   display: flex;
@@ -39,15 +45,14 @@ a {
   margin-left: 10%;
   padding: 1%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
   width: 70%;
 }
 
 .form-container1 {
   margin: 5%;
-  margin-left: 10%;
-  margin-top: 10%;
+
   padding: 1%;
   display: flex;
   flex-direction: column;
@@ -55,6 +60,10 @@ a {
   width: 30%;
 }
 
+h4 {
+  margin: 3%;
+  padding: 1%;
+}
 .p-data {
   margin-left: 10%;
   margin-bottom: -7%;
@@ -67,12 +76,12 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 3%;
+  padding: 1%;
 }
 
 .btn1 {
-  padding: 5%;
-  border-radius: 3px;
+  padding: 2%;
+  border-radius: 5px;
 
   width: 15vh;
   background-color: skyblue;
@@ -80,9 +89,8 @@ a {
 }
 
 .btn2 {
-  padding: 5%;
-  border-radius: 3px;
-
+  padding: 2%;
+  border-radius: 5px;
   background-color: rgb(66, 66, 238);
   cursor: pointer;
 

@@ -1,6 +1,6 @@
 .header-id {
     /* height: 25px; */
-    width: 18rem;
+    width: 32rem;
     /* left: 351px; */
     letter-spacing: 0em;
     text-align: left;
@@ -14,27 +14,32 @@
 }
 .header-container {
     height: 3rem;
-    padding-left: 1vw;
-    padding-top: 4vh;
+    padding-left: 1rem;
+    padding-top: 1rem;
     display: flex;
 }
 .logout {
     display: flex;
     /* margin-right: 2vw; */
-    margin-left: 35rem;
-    /* margin-left: 52vw; */
-    /* left: 10px; */
+    /* float: right; */
+    /* margin-left: -10rem; */
+    margin-top: 0.5rem;
+
+    margin-left: 21rem;
+    /* width: 11rem; */
+    height: 3.2rem;
 }
 div.username {
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 400;
     margin-left: 0.5rem;
+    width: fit-content;
     font-size: 22px;
     line-height: 28px;
     color: #A6A6A6;
     letter-spacing: 0em;
-    width: 9rem;
+    /* width: 9rem; */
     text-align: left;
     float: right;
     cursor: pointer;
@@ -49,5 +54,6 @@ img.down {
     height: 11px;
     width: 18px;
     margin-top: 8px;
+    margin-left: 1rem;
     cursor: pointer;
 }

@@ -4,7 +4,7 @@ import './search.css'
 import serach from '../images/search.png'
 import add from '../images/Add_plus.png'
 import line from  '../images/Line.png'
-
+import {Link}  from "react-router-dom"
 
 const SearchBAr = ({searchkey, setSearchKey}) => {
 
@@ -19,10 +19,12 @@ const SearchBAr = ({searchkey, setSearchKey}) => {
 
 </form>
 
+        <Link to="/Basic">
         <button id='search-btn'>
           <img className='plus' src={add} alt='data'/> 
           Add Property
           </button>
+        </Link>
 
         </div>
   )
