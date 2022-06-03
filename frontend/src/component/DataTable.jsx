@@ -1,3 +1,4 @@
+
 import React,{useEffect, useState} from 'react';
 import image from '../images/image_icon.png';
 import eye from '../images/eye.png';
@@ -7,10 +8,11 @@ import "./CSS-property/userData.css"
 
 const url = process.env.REACT_APP_API + "property";
 
-const DataTable = () => {
-  const [status,setStatus]=useState('Unsold');
+
+const DataTable = ({searchkey}) => {
 
   const [data,setData] = useState([]);
+  
     async function getData() {
       const response = await fetch(url);
   
@@ -40,6 +42,9 @@ console.log(data.data)
       saty();
       console.log("anything")
     }, []);
+
+    const dataone = data.filter(Element => Element.PPID.includes(searchkey))
+
     function StatUsc (key) {
       console.log("data",key);
       data.map((obj,idx)=>(
@@ -67,8 +72,12 @@ console.log(data.data)
       };
      
 
+
   return (
-    <div className='datatable-container'>
+    <>
+  
+  <div className='datatable-container'>
+
         {/* <Table striped bordered hover variant="dark"> */}
     <table>
     <thead>
@@ -85,6 +94,7 @@ console.log(data.data)
       </tr>
     </thead>
     <tbody>
+
       {data.map((obj,idx)=>(
         <tr key={idx}>
         <td className='ppd ppdid'>{obj.PPID}</td>
@@ -103,6 +113,7 @@ console.log(data.data)
     
   {/* </Table> */}
   </div>
+  </>
   )
 }
 

@@ -13,12 +13,11 @@ router.post("/login", userLogin, (req, res) => {
 
 router.post("/Signup", async (req, res) => {
   const name   = req.body.email.substring(0, req.body.email.lastIndexOf("@"));
-  const userid = req.body
-  console.log(userid);
+  const UserID = req.body.UserID
   const data = new User({
     ...req.body,
     UserName : name,
-    UserID : userid
+    UserID : UserID
   });
   
   try {
