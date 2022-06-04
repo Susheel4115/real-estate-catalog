@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import '../component/CSS-property/SignUp.css'
+import axios from "axios";
 
 function Signup() {
   const [password, setPassword] = useState("");
@@ -16,21 +17,38 @@ function Signup() {
     const data = {
       email:e.target.elements.email.value,
       password:e.target.elements.password.value,
-      UserID:parseInt(Math.random()*10000) 
+      UserID:parseInt(Math.random()*100000) 
     }
-    const JsonResponse = await fetch("http://localhost:5000/Signup", {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body:JSON.stringify(data)
-    })
-    const response = await JsonResponse.json();
-    console.log(response);
-    if(response.status === "Sucess"){
+
+    console.log(data)
+    try {
+      const res =await axios.post(
+        `http://localhost:5000/Signup`,
+        data,
+        {
+          withCredentials: true,
+        }
+      );
+      console.log(res);
       navigate("/Signin")
+      
+    } catch (error) {
+        alert(error.response.data.message);
     }
-    else{
-      alert(response.message);
-    }
+    
+    // const JsonResponse = await fetch("http://localhost:5000/Signup", {
+    //   method: "POST",
+    //   headers: {"Content-Type": "application/json"},
+    //   body:JSON.stringify(data)
+    // })
+    // const response = await JsonResponse.json();
+    
+    // try{
+    //   (response.data.status === "Sucess"){
+    //   navigate("/Signin")
+    // }
+    // catch{
+    // }
     
   };
   return (

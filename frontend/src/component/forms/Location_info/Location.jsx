@@ -1,35 +1,35 @@
-import React  from "react";
+import React from "react";
 import "./styles.css";
 import Header from "../../common/Header";
 import SideBar from "../../common/SideBar";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const Location = ({ user,data }) => {
-  console.log("data is here", data)
+const Location = ({ user, data }) => {
+  console.log("data is here", data);
 
-      const navigate=useNavigate();
+  const navigate = useNavigate();
 
-      const handleSubmit = async (e) => {
-    
-      const JsonResponse = await fetch("http://localhost:5000/property", {
+  const handleSubmit = async (e) => {
+    navigate("/property");
+    const JsonResponse = await fetch("http://localhost:5000/property", {
       method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body:JSON.stringify(data)
-    })
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: localStorage.getItem("token"),
+      },
+      body: JSON.stringify(data),
+    });
     // console.log(data)
     const respose = await JsonResponse.json();
-    console.log(respose)
-        alert(respose.message);
+    console.log(respose);
+    alert(respose.message);
 
-    if(respose.status === "sucess"){
-      navigate("/property")
-    }
-    else{
+    if (respose.status === "sucess") {
+    } else {
       alert(respose.message);
     }
-  // navigate("/Property")
-    
-  }
+    // navigate("/Property")
+  };
 
   return (
     <div className="basic">
@@ -42,70 +42,43 @@ const Location = ({ user,data }) => {
             <div className="form">
               <div className="form-container">
                 <h4>Email</h4>
-                <input
-                  type="text"
-                  
-                  placeholder="Email"
-                  className="input"
-                />
+                <input type="text" placeholder="Email" className="input" />
                 <h4>Area</h4>
-                <select className="input"  placeholder="select Area">
-                  <option >Guntur</option>
-                  <option >Vijayawada</option>
-                  <option >owner</option>
+                <select className="input" placeholder="select Area">
+                  <option>Guntur</option>
+                  <option>Vijayawada</option>
+                  <option>owner</option>
                 </select>
                 <h4>Address</h4>
-                <input
-                  type="text"
-                 
-                  placeholder="Address"
-                  className="input"
-                />
+                <input type="text" placeholder="Address" className="input" />
                 <h4>Latitude</h4>
-                <input
-                  type="text"
-                  
-                  placeholder="Latitude"
-                  className="input"
-                />
+                <input type="text" placeholder="Latitude" className="input" />
               </div>
 
               <div className="form-container1">
                 <h4>City</h4>
-                <select className="input"  placeholder="select City">
-                  <option >Guntur</option>
-                  <option >Vijayawada</option>
-                  <option >Hyderabad</option>
+                <select className="input" placeholder="select City">
+                  <option>Guntur</option>
+                  <option>Vijayawada</option>
+                  <option>Hyderabad</option>
                 </select>
                 <h4>Pincode</h4>
-                <select
-                  className="input"
-                 
-                  placeholder="please select pincode"
-                >
-                  <option >522503</option>
-                  <option >52413</option>
-                  <option >520001</option>
+                <select className="input" placeholder="please select pincode">
+                  <option>522503</option>
+                  <option>52413</option>
+                  <option>520001</option>
                 </select>
                 <h4>Landmark</h4>
-                <input
-                  type="text"
-                 
-                  placeholder="Landmark"
-                  className="input"
-                />
+                <input type="text" placeholder="Landmark" className="input" />
                 <h4>Longitude</h4>
-                <input
-                  type="text"
-                 
-                  placeholder="Longitude"
-                  className="input"
-                />
+                <input type="text" placeholder="Longitude" className="input" />
               </div>
             </div>
 
             <div className="button">
-              <Link to="/General"><button className="btn1 ">Previous</button></Link>
+              <Link to="/General">
+                <button className="btn1 ">Previous</button>
+              </Link>
               <button className="btn2">Add property</button>
             </div>
           </form>

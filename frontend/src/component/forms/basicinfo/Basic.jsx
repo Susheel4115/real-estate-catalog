@@ -13,10 +13,11 @@ const Basic = ({user,data,setData}) => {
 
   const handleSubmit = async (e) => {
     // e.preventDefault();
-    console.log("data")
-    console.log(e.target.elements.loan.value)
-    console.log(e.target.elements.Type.value)
-    console.log(e.target.elements.Price.value);
+    // console.log("data")
+    // console.log(e.target.elements.loan.value)
+    // console.log(e.target.elements.Type.value)
+    // console.log(e.target.elements.Price.value);
+    try {
     const PPID=parseInt(Math.random()*10000) ;
     const Views=parseInt(Math.random()*10);
     const Duration=parseInt(Math.random()*100);
@@ -31,7 +32,12 @@ const Basic = ({user,data,setData}) => {
           Duration:Duration
         }
       )
-navigate("/PropertyDetails")
+      navigate('/PropertyDetails')
+    } catch (error) {
+      alert("error")
+    }
+    
+
     // const data = {
     //   email:e.target.elements.email.value,
     //   // password:e.target.elements.password.value,
@@ -39,9 +45,6 @@ navigate("/PropertyDetails")
     // }
     // console.log(data)
   }
-
-
-
 
   return (
     <div className="basic">
@@ -54,7 +57,6 @@ navigate("/PropertyDetails")
             <div className="form">
               <div className="form-container">
                 <h4>Property type</h4>
-
                 <select className="input" name="cars"
                 id="Type" value={Type} onChange={(e)=>setType(e.target.value)}>
                   <option value="volvo">Select Property type</option>
@@ -128,7 +130,6 @@ navigate("/PropertyDetails")
                 
               </div>
             </div>
-            
             <div className="button">
              <Link to="/property"><button className="btn1 ">Cancel</button></Link> 
               <button className="btn2">Save & continue</button>
@@ -139,6 +140,4 @@ navigate("/PropertyDetails")
     </div>
   );
 }
-
-
 export default Basic;

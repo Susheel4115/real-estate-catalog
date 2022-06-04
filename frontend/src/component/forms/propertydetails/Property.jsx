@@ -6,21 +6,21 @@ import Header from "../../common/Header";
 import {Link, useNavigate } from "react-router-dom";
 
 const PropertyInput = ({ user,data,setData }) => {
-const [area,setArea]=useState("");
-const [length,setLength]=useState()
-const [width,setWidth]=useState()
+// const [area,setArea]=useState("");
+const [length,setLength]=useState("")
+const [width,setWidth]=useState("")
 //  const [Price,setPrice]=useState("")
 //  const [Type,setType]=useState("")
  const navigate=useNavigate();
 
-const calulate=async(len,wid)=>{
+const calulate= (len,wid)=>{
   // console.log(e);
   const length=parseInt(len);
   console.log(length)
   const width=parseInt(wid);
   const area=parseInt(length*width)
-  setArea(area)
-  console.log(area)
+  // setArea(area)
+  return area;
 }
   const handleSubmit = async (e) => {
     // e.preventDefault();
@@ -28,7 +28,7 @@ const calulate=async(len,wid)=>{
     const length=parseInt(e.target.elements.length.value);
     const width=parseInt(e.target.elements.width.value);
     const area=parseInt(length*width);
-    setArea(area);
+    // setArea(area);
       setData(
         {...data,
           Area:e.target.elements.area.value,
@@ -55,7 +55,7 @@ navigate("/General");
                   value={length}
                   onChange={(e)=>{
                     setLength(e.target.value);
-                  calulate(length,width)}}
+                  }}
                  
                   className="input"
                   placeholder="Example: 1000"
@@ -64,7 +64,7 @@ navigate("/General");
                 <input
                   type="text"
                   id="area"
-                  value={area}
+                  value={String(calulate(length, width)) === String(NaN) ? 0 : calulate(length, width)}
                   
                   
                   placeholder="Example: 7500"
@@ -105,7 +105,7 @@ navigate("/General");
                   value={width}
                   onChange={(e)=>{
                     setWidth(e.target.value);
-                    calulate(length,width)
+                    // calulate(length,width)
                   }}
                   placeholder="Example: 1000"
                   className="input"
