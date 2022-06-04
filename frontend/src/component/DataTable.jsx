@@ -1,46 +1,58 @@
 
+import axios from 'axios';
 import React,{useEffect, useState} from 'react';
-import image from '../images/image_icon.png';
-import eye from '../images/eye.png';
-import edit from '../images/edit.png';
+import { useNavigate } from 'react-router-dom';
+
 import "./CSS-property/userData.css"
-// const [state, dispatch] = useStateValue();
+import Toggle from './Toggle';
+
 
 const url = process.env.REACT_APP_API + "property";
 
 
 const DataTable = ({searchkey}) => {
-
+  const navigate = useNavigate();
   const [data,setData] = useState([]);
+
   // const [status,setStatus]=useState("")
+
   
     async function getData() {
-      const response = await fetch(url);
-  
-const data = await response.json();
-setData(data.data.reverse());
+      try {
+        const res = await axios.get(url,
+          {},
+        {
+          withCredentials: true,
+        }
+      );
+      console.log(res);
+      setData(res.data.data.reverse());
+      } catch (error) {
+        navigate('/Signin');
+      }
+
 console.log(data.data)
     }
-    async function saty(status,key){
-      console.log("jse",data[key]);
-      console.log("status :", status)
-      ({...data[key], Status:'new'}) 
-      console.log(data)
-      const st=data.map((idx)=>{
-        if(idx===key){
-         if (status==="Unsold"){
-           return true;
-         }else{
-           return false
-         }
-          }} 
-          )
+    // async function saty(status,key){
+    //   console.log("jse",data[key]);
+    //   console.log("status :", status)
+    //   ({...data[key], Status:'new'}) 
+    //   console.log(data)
+    //   const st=data.map((idx)=>{
+    //     if(idx===key){
+    //      if (status==="Unsold"){
+    //        return true;
+    //      }else{
+    //        return false
+    //      }
+    //       }} 
+    //       )
           
-    }
+    // }
      
     useEffect(() => {
       getData();
-      saty();
+      // saty();
       console.log("anything")
     }, []);
 
@@ -71,11 +83,9 @@ console.log(data.data)
 // onClick={()=>saty(obj.Status,idx)}
       
       // };
-     
-
-
   return (
     <>
+    
   
   <div className='datatable-container'>
 
@@ -97,17 +107,7 @@ console.log(data.data)
     <tbody>
 
       {dataone.map((obj,idx)=>(
-        <tr key={idx}>
-        <td className='ppd ppdid'>{obj.PPID}</td>
-        <td className='image'><img src={image} alt='aj'/></td>
-        <td className='plot'>{obj.Property}</td>
-        <td className='contact'>{obj.Contact}</td>
-        <td className='area'>{obj.Area}</td>
-        <td className='view'>{obj.Views}</td>
-        <td className='status' ><button  >{obj.Status}</button></td>
-        <td className='days'>{obj.Duration}</td>
-        <td className='action'><img src={eye} alt='eye' /> <img src={edit} alt='edit'/></td>
-      </tr> 
+        <Toggle  key={idx} obj={obj}/>
       ))}
     </tbody>
     </table>

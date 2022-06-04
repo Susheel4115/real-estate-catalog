@@ -19,7 +19,7 @@ function App() {
   });
   const [data,setData]=useState({
     PPID:0,
-    Property:"na",
+    Property:"NA",
     Area:"na",
     Contact:"na",
     Views:"na",
@@ -39,8 +39,9 @@ function App() {
         {/* login page */}
         <Route path="/SignUp" element={<Signup />} />
         {/* registration page */}
-        <Route path="/property" element={<Property user={user}/>} /> 
+        <Route path="/Property" element={<Property user={user}/>} /> 
         {/* property page */}
+
         <Route path="/Basic" element={<Basic user={user} data={data} setData={setData}/>} />
         <Route path="/PropertyDetails" element={<Propertypage user={user} data={data}setData={setData} />}/>
         <Route path="/General" element={<General user={user} data={data} setData={setData}/>}/>

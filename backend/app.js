@@ -3,11 +3,20 @@ const dotenv = require("dotenv");
 const connectDB = require("./connection/connect");
 const cors = require('cors');
 const dataRouter=require('./routes/data');
+const cookieParser = require("cookie-parser");
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cookieParser());
 app.use(express.json());
+
+const corsOptions = {
+  origin: "http://localhost:3000",
+  credentials: true,
+  optionSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 
 const router = require("./routes/router");
 

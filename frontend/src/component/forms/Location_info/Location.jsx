@@ -10,7 +10,7 @@ const Location = ({ user,data }) => {
       const navigate=useNavigate();
 
       const handleSubmit = async (e) => {
-    
+      navigate("/property")
       const JsonResponse = await fetch("http://localhost:5000/property", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
@@ -22,7 +22,7 @@ const Location = ({ user,data }) => {
         alert(respose.message);
 
     if(respose.status === "sucess"){
-      navigate("/property")
+      
     }
     else{
       alert(respose.message);
