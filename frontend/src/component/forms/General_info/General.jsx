@@ -2,32 +2,28 @@ import React, { useState } from "react";
 import "./styles.css";
 import SideBar from "../../common/SideBar";
 import Header from "../../common/Header";
-import {Link, useNavigate } from "react-router-dom";
-const General = ({ user,data,setData }) => {
-  const [contact,setConact]= useState("")
-  
- const navigate=useNavigate();
+import { Link, useNavigate } from "react-router-dom";
+import Nav from "./Nav";
+const General = ({ user, data, setData }) => {
+  const [contact, setConact] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    console.log(e.target.elements.contact.value)
-    
-      setData(
-        {...data,
-          Contact:e.target.elements.contact.value,
-        }
-      )
-navigate("/location")
-    
-  }
+
+    console.log(e.target.elements.contact.value);
+
+    setData({ ...data, Contact: e.target.elements.contact.value });
+    navigate("/location");
+  };
 
   return (
     <div className="basic">
       <SideBar />
       <div className="headform">
         <Header user={user} />
-
+        <Nav />
         <div className="main">
           <form action="" className="form-basic" onSubmit={handleSubmit}>
             <div className="form">
@@ -62,7 +58,7 @@ navigate("/location")
                   type="text"
                   id="contact"
                   value={contact}
-                  onChange={(e)=>setConact(e.target.value)}
+                  onChange={(e) => setConact(e.target.value)}
                   placeholder="enter your mobile number"
                   className="input"
                 />
@@ -90,7 +86,9 @@ navigate("/location")
             </div>
 
             <div className="button">
-              <Link to="PropertyDetails"><button className="btn1 ">Previous</button></Link>
+              <Link to="PropertyDetails">
+                <button className="btn1 ">Previous</button>
+              </Link>
               <button className="btn2">Save & continue</button>
             </div>
           </form>

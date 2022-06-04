@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import "./styles.css";
 import Header from "../../common/Header";
 import SideBar from "../../common/SideBar";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-// import Nav from "../../common/Nav";
-const Basic = ({user,data,setData}) => {
- const [loan,setLoan]=useState("")
- const [Price,setPrice]=useState("")
- const [Type,setType]=useState("")
- const navigate=useNavigate();
+import Nav from "../../common/Nav";
+const Basic = ({ user, data, setData }) => {
+  const [loan, setLoan] = useState("");
+  const [Price, setPrice] = useState("");
+  const [Type, setType] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     // e.preventDefault();
@@ -18,47 +18,50 @@ const Basic = ({user,data,setData}) => {
     // console.log(e.target.elements.Type.value)
     // console.log(e.target.elements.Price.value);
     try {
-    const PPID=parseInt(Math.random()*10000) ;
-    const Views=parseInt(Math.random()*10);
-    const Duration=parseInt(Math.random()*100);
-    // const day=round(Durtion/2)
-    var ppi=PPID.toString();
-    ppi="PPID"+ppi;
-      setData(
-        {...data,
-          Property:e.target.elements.Type.value,
-          PPID: ppi,
-          Views:Views,
-          Duration:Duration
-        }
-      )
-      navigate('/PropertyDetails')
+      const PPID = parseInt(Math.random() * 10000);
+      const Views = parseInt(Math.random() * 10);
+      const Duration = parseInt(Math.random() * 100);
+      // const day=round(Durtion/2)
+      var ppi = PPID.toString();
+      ppi = "PPID" + ppi;
+      setData({
+        ...data,
+        Property: e.target.elements.Type.value,
+        PPID: ppi,
+        Views: Views,
+        Duration: Duration,
+      });
+      navigate("/PropertyDetails");
     } catch (error) {
-      alert("error")
+      alert("error");
     }
-    
 
     // const data = {
     //   email:e.target.elements.email.value,
     //   // password:e.target.elements.password.value,
-    //   // UserID:parseInt(Math.random()*10000) 
+    //   // UserID:parseInt(Math.random()*10000)
     // }
     // console.log(data)
-  }
+  };
 
   return (
     <div className="basic">
       <SideBar />
       <div className="headform">
         <Header user={user} />
-        {/* <Nav /> */}
+        <Nav />
         <div className="main">
           <form action="" className="form-basic" onSubmit={handleSubmit}>
             <div className="form">
               <div className="form-container">
                 <h4>Property type</h4>
-                <select className="input" name="cars"
-                id="Type" value={Type} onChange={(e)=>setType(e.target.value)}>
+                <select
+                  className="input"
+                  name="cars"
+                  id="Type"
+                  value={Type}
+                  onChange={(e) => setType(e.target.value)}
+                >
                   <option value="volvo">Select Property type</option>
                   <option value="Flat">Flat</option>
                   <option value="House">House</option>
@@ -76,7 +79,7 @@ const Basic = ({user,data,setData}) => {
                   type="text"
                   id="Price"
                   value={Price}
-                  onChange={(e)=>setPrice(e.target.value)}
+                  onChange={(e) => setPrice(e.target.value)}
                   placeholder="name"
                   className="input"
                 />
@@ -123,15 +126,16 @@ const Basic = ({user,data,setData}) => {
                   type="text"
                   id="loan"
                   value={loan}
-                onChange={(e)=>setLoan(e.target.value)}
+                  onChange={(e) => setLoan(e.target.value)}
                   placeholder="name"
                   className="input"
                 />
-                
               </div>
             </div>
             <div className="button">
-             <Link to="/property"><button className="btn1 ">Cancel</button></Link> 
+              <Link to="/property">
+                <button className="btn1 ">Cancel</button>
+              </Link>
               <button className="btn2">Save & continue</button>
             </div>
           </form>
@@ -139,5 +143,5 @@ const Basic = ({user,data,setData}) => {
       </div>
     </div>
   );
-}
+};
 export default Basic;
