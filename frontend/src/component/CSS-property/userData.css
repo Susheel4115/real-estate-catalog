@@ -139,19 +139,8 @@ tr {
   border-radius: 1rem;
   border: 1px solid red;
 }
-td,
-tr {
-  border-bottom: 1px solid black;
-  padding: 7px;
-}
-th,
-tr {
-  border-bottom: 5px solid #ddd;
-  padding: 7px;
-}
-tbody {
-  padding: 2vh 0vh;
-}
+
+
 th#status {
   padding-right: 4rem;
   /* position: absolute; */

@@ -3,7 +3,9 @@ import "./styles.css";
 import Header from "../../common/Header";
 import SideBar from "../../common/SideBar";
 import { Link, useNavigate } from "react-router-dom";
+
 import Nav from "./Nav";
+
 
 const Location = ({ user, data }) => {
   console.log("data is here", data);
