@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import './CSS-property/SignIn.css';
 import eye from '../images/eye.png';
+import axios from "axios";
 
 function Signin({setUser}) {
   const [email, setEmail] = useState("");
@@ -15,26 +16,54 @@ function Signin({setUser}) {
       email:e.target.elements.email.value,
       password:e.target.elements.password.value,
     }
-    const JsonResponse = await fetch("http://localhost:5000/login", {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body:JSON.stringify(data)
-    })
-    const response = await JsonResponse.json();
-    console.log(response);
-    if(response.status === "Success"){
-      navigate("/property")
-      setUser(
+
+    try {
+      const res =await axios.post(
+        `http://localhost:5000/login`,
+        data,
         {
-          UserName:response.UserName,
-          UserID:response.UserID
+          withCredentials: true,
         }
-      )
+        // if(response.status === "Success"){
+    //   navigate("/property")
+    // }
+    // else{
+    //   alert(response.status);
+    // }
+      );
+      // setUser(
+      //   {
+      //     UserName:response.UserName,
+      //     UserID:response.UserID
+      //   }
+      // )
+      navigate('/property');
+      console.log(res);
+      // alert(error.response.data.message);
+    } catch (error) {
+        alert(error.response.data.message);
     }
-    else{
-      alert(response.status);
-    }
-    console.log(response);
+
+    // const JsonResponse = await fetch("http://localhost:5000/login", {
+    //   method: "POST",
+    //   headers: {"Content-Type": "application/json"},
+    //   body:JSON.stringify(data)
+    // })
+    // const response = await JsonResponse.json();
+    // console.log(response);
+    // if(response.status === "Success"){
+    //   navigate("/property")
+    //   setUser(
+    //     {
+    //       UserName:response.UserName,
+    //       UserID:response.UserID
+    //     }
+    //   )
+    // }
+    // else{
+    //   alert(response.status);
+    // }
+    // console.log(response);
   };
   return (
     <div className="sign-in-parent">
