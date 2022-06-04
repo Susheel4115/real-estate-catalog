@@ -1,11 +1,11 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import './CSS-property/SignIn.css';
-import eye from '../images/eye.png';
+import "./CSS-property/SignIn.css";
+import eye from "../images/eye.png";
 import axios from "axios";
 
-function Signin({setUser}) {
+function Signin({ setUser }) {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
@@ -13,57 +13,32 @@ function Signin({setUser}) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
-      email:e.target.elements.email.value,
-      password:e.target.elements.password.value,
-    }
+      email: e.target.elements.email.value,
+      password: e.target.elements.password.value,
+    };
 
     try {
-      const res =await axios.post(
-        `http://localhost:5000/login`,
-        data,
-        {
-          withCredentials: true,
-        }
-        // if(response.status === "Success"){
-    //   navigate("/property")
-    // }
-    // else{
-    //   alert(response.status);
-    // }
-      );
-      // setUser(
-      //   {
-      //     UserName:response.UserName,
-      //     UserID:response.UserID
-      //   }
-      // )
-      navigate('/property');
-      console.log(res);
-      // alert(error.response.data.message);
-    } catch (error) {
-        alert(error.response.data.message);
-    }
+      const res = await axios.post(`http://localhost:5000/login`, data, {
+        withCredentials: true,
+      });
 
-    // const JsonResponse = await fetch("http://localhost:5000/login", {
-    //   method: "POST",
-    //   headers: {"Content-Type": "application/json"},
-    //   body:JSON.stringify(data)
-    // })
-    // const response = await JsonResponse.json();
-    // console.log(response);
-    // if(response.status === "Success"){
-    //   navigate("/property")
-    //   setUser(
-    //     {
-    //       UserName:response.UserName,
-    //       UserID:response.UserID
-    //     }
-    //   )
-    // }
-    // else{
-    //   alert(response.status);
-    // }
-    // console.log(response);
+      console.log(res.data);
+
+      if (res.data.status === "sucess") {
+        localStorage.setItem("token", res.data.token);
+        setUser({
+          UserID: res.data.UserID,
+          UserName: res.data.UserName,
+        });
+
+        localStorage.setItem("UserID", res.data.UserID);
+        localStorage.setItem("UserName", res.data.UserName);
+
+        navigate("/property");
+      }
+    } catch (error) {
+      alert(error.response.data.message);
+    }
   };
   return (
     <div className="sign-in-parent">
@@ -97,19 +72,23 @@ function Signin({setUser}) {
               setShowPassword(!showPassword);
             }}
           >
-
             <img src={eye} alt="no data" />
           </span>
-            <button type="submit" className="submit-button">
-              Sign in
-            </button>
+          <button type="submit" className="submit-button">
+            Sign in
+          </button>
         </form>
       </div>
       <div>
-        <p className="para">Don't have an account?<Link to='/Signup' style={{fontWeight: 'bold'}}> SignUp</Link></p>
+        <p className="para">
+          Don't have an account?
+          <Link to="/Signup" style={{ fontWeight: "bold" }}>
+            {" "}
+            SignUp
+          </Link>
+        </p>
       </div>
-      
     </div>
   );
 }
-export default Signin
+export default Signin;

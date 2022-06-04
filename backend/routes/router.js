@@ -26,23 +26,15 @@ router.post("/login", async (req, res) => {
 
   var token = jwt.sign({ _id: user._id }, process.env.SECRET_KEY);
 
-  res.cookie("token", token, {
-    httpOnly: true,
-  });
-
   res.json({
     status: "sucess",
     token: token,
+    UserID: user.UserID,
+    UserName: user.UserName,
   });
-  // res.send("You're in login page");
-//   res.json({
-//     status: "sucess",
-//     data: req.body,
-//   });
 });
 
 router.post("/Signup", async (req, res) => {
- 
   // const data = new User({
   //   ...req.body,
   //   UserName : name,
@@ -50,15 +42,15 @@ router.post("/Signup", async (req, res) => {
   // });
 
   try {
-    const name   = req.body.email.substring(0, req.body.email.lastIndexOf("@"));
-    const UserID = req.body.UserID
+    const name = req.body.email.substring(0, req.body.email.lastIndexOf("@"));
+    const UserID = req.body.UserID;
     const hashPass = await bcrypt.hash(req.body.password, 10);
 
     const data = new User({
       ...req.body,
       password: hashPass,
-      UserName : name,
-      UserID : UserID
+      UserName: name,
+      UserID: UserID,
     });
 
     res.status(200).json({
@@ -71,7 +63,7 @@ router.post("/Signup", async (req, res) => {
       message: "user is already register",
     });
   }
-  
+
   // try {
   //   const dataToSave = await data.save();
   //   console.log( name );

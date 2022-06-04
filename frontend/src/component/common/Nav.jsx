@@ -1,23 +1,20 @@
-import React from "react";
-import "./nav.css";
-
-const Nav = () => {
+export default function Nav() {
   return (
-    <div className="nav">
-      <p className="choose">
-        <span className="digit">1.</span> Basic info
-      </p>
-      <p className="choose1">
-        <span className="digit1">2.</span>Property Detail
-      </p>
-      <p className="choose1">
-        <span className="digit1">3.</span>General Info
-      </p>
-      <p className="choose1">
-        <span className="digit1">4.</span>Location info
-      </p>
+    <div className="navbar">
+      <ul>
+        <li>
+          <a href="/BasicInfo">Basic info</a>
+        </li>
+        <li>
+          <a href="news.asp">Property details</a>
+        </li>
+        <li>
+          <a href="contact.asp">General Info</a>
+        </li>
+        <li>
+          <a href="about.asp">Location Info</a>
+        </li>
+      </ul>
     </div>
   );
-};
-
-export default Nav;
+}
