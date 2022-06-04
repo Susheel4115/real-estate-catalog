@@ -5,6 +5,7 @@ import Header from "../../common/Header";
 import { Link, useNavigate } from "react-router-dom";
 import Nav from "./Nav";
 
+
 const PropertyInput = ({ user, data, setData }) => {
   // const [area,setArea]=useState("");
   const [length, setLength] = useState("");
@@ -32,6 +33,7 @@ const PropertyInput = ({ user, data, setData }) => {
     setData({ ...data, Area: e.target.elements.area.value });
     navigate("/General");
   };
+
   return (
     <div className="basic">
       <SideBar />
@@ -53,6 +55,7 @@ const PropertyInput = ({ user, data, setData }) => {
                   onChange={(e) => {
                     setLength(e.target.value);
                   }}
+
                   className="input"
                   placeholder="Example: 1000"
                 />
@@ -60,11 +63,11 @@ const PropertyInput = ({ user, data, setData }) => {
                 <input
                   type="text"
                   id="area"
-                  value={
-                    String(calulate(length, width)) === String(NaN)
-                      ? 0
-                      : calulate(length, width)
-                  }
+
+                  value={String(calulate(length, width)) === String(NaN) ? 0 : calulate(length, width)}
+                  
+                  
+
                   placeholder="Example: 7500"
                   className="input"
                 />
