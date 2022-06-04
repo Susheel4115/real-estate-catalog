@@ -49,6 +49,7 @@ const Basic = ({ user, data, setData }) => {
       <SideBar />
       <div className="headform">
         <Header user={user} />
+        <div className="rectangle"></div>
         <Nav />
         <div className="main">
           <form action="" className="form-basic" onSubmit={handleSubmit}>

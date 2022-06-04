@@ -44,7 +44,9 @@ function Signin({ setUser }) {
     <div className="sign-in-parent">
       <div className="sign-in-form-container">
         <h1 style={{ color: "#4c57b6" }}>Logo</h1>
-        <p>Enter your credentials to access your Account</p>
+        <p className="description">
+          Enter your credentials to access your Account
+        </p>
         <form onSubmit={handleSubmit}>
           <input
             type="email"
@@ -77,6 +79,10 @@ function Signin({ setUser }) {
           <button type="submit" className="submit-button">
             Sign in
           </button>
+          <Link to="/Signup" style={{ fontWeight: "bold" }}>
+            {" "}
+            <p className="signup">SignUp</p>
+          </Link>
         </form>
       </div>
       <div>

@@ -1,55 +1,51 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import '../component/CSS-property/SignUp.css'
+import "../component/CSS-property/SignUp.css";
 import axios from "axios";
+import eye from "../images/eye.png";
 
 function Signup() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const [confirmPassword, setConfirmPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(password !== confirmPassword) return alert("Password doesn't match")
-    
+    if (password !== confirmPassword) return alert("Password doesn't match");
+
     const data = {
-      email:e.target.elements.email.value,
-      password:e.target.elements.password.value,
-      UserID:parseInt(Math.random()*100000) 
+      email: e.target.elements.email.value,
+      password: e.target.elements.password.value,
+      UserID: parseInt(Math.random() * 100000),
+    };
+
+    console.log(data);
+    try {
+      const res = await axios.post(`http://localhost:5000/Signup`, data, {
+        withCredentials: true,
+      });
+      console.log(res);
+      navigate("/Signin");
+    } catch (error) {
+      alert(error.response.data.message);
     }
 
-    console.log(data)
-    try {
-      const res =await axios.post(
-        `http://localhost:5000/Signup`,
-        data,
-        {
-          withCredentials: true,
-        }
-      );
-      console.log(res);
-      navigate("/Signin")
-      
-    } catch (error) {
-        alert(error.response.data.message);
-    }
-    
     // const JsonResponse = await fetch("http://localhost:5000/Signup", {
     //   method: "POST",
     //   headers: {"Content-Type": "application/json"},
     //   body:JSON.stringify(data)
     // })
     // const response = await JsonResponse.json();
-    
+
     // try{
     //   (response.data.status === "Sucess"){
     //   navigate("/Signin")
     // }
     // catch{
     // }
-    
   };
   return (
     <div className="sign-up-parent">
@@ -68,7 +64,7 @@ function Signup() {
             onChange={(e) => setEmail(e.target.value)}
           />
 
-          <input
+          {/* <input
             className="password"
             type="password"
             placeholder="Password"
@@ -77,7 +73,25 @@ function Signup() {
             value={password}
             required
             onChange={(e) => setPassword(e.target.value)}
+          /> */}
+          <input
+            className="password"
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            id="password"
+            name="password"
+            value={password}
+            required
+            onChange={(e) => setPassword(e.target.value)}
           />
+          <span
+            className="eye"
+            onClick={() => {
+              setShowPassword(!showPassword);
+            }}
+          >
+            <img src={eye} alt="no data" />
+          </span>
 
           <input
             className="confirm-password"
@@ -88,11 +102,10 @@ function Signup() {
             required
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
-          
+
           <button type="submit" className="submit-button">
             Sign Up
           </button>
-          
         </form>
       </div>
       {/* <Link to="/signin">

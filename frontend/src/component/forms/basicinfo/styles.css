@@ -96,3 +96,12 @@ h4 {
 
   width: 15vh;
 }
+
+.rectangle {
+  height: 3px;
+  width: calc(100% - 0rem);
+  background: rgba(225, 249, 244, 1);
+  border-radius: 0px;
+
+  background: #e1f9f4;
+}

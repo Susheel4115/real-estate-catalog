@@ -29,11 +29,7 @@ th#ppdid {
   width: calc(100% - 0rem);
   background: rgba(225, 249, 244, 1);
   border-radius: 0px;
-  /* position: absolute; */
-  /* left: 20%; */
-  /* right: -0.31%; */
-  /* top: 9.76%; */
-  /* bottom: 87.96%; */
+
   background: #e1f9f4;
 }
 
@@ -44,6 +40,9 @@ th#ppdid {
   border-radius: 0px;
 }
 
+.toggle-t {
+  margin-top: 40px;
+}
 thead {
   /* height: 65px; */
   /* width: 1201px; */
