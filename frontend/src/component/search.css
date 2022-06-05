@@ -1,5 +1,6 @@
 .searchbar-container {
     display: flex;
+    margin-left: 2rem;
 }
 
 
@@ -9,6 +10,7 @@ form.form {
     padding-left: 1rem;
     width: 22rem;
     margin-right: 1rem;
+    margin-top: 1rem;
     /* margin-left: 5vh; */
     /* width: 377px; */
     /* margin-top: 7vh; */
@@ -25,6 +27,7 @@ form.form {
     height: 3rem;
     margin: 0;
     width: 17rem;
+    padding-left: 1rem;
     border: 1px solid wheat;
     border-radius: 32px;
 }
@@ -42,7 +45,7 @@ img#search {
     cursor: pointer;
 }
 button#search-btn {
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
     margin-left: 27rem;
     background: #8fc7fa;
     width: 11rem;

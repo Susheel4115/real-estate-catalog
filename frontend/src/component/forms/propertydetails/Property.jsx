@@ -28,6 +28,7 @@ const calulate= (len,wid)=>{
     const length=parseInt(e.target.elements.length.value);
     const width=parseInt(e.target.elements.width.value);
     const area=parseInt(length*width);
+    console.log(area)
     // setArea(area);
       setData(
         {...data,
@@ -46,7 +47,7 @@ navigate("/General");
 
         <div className="main">
           <form action="" className="form-basic" onSubmit={handleSubmit}>
-            <div className="form">
+            <div className="form-data1">
               <div className="form-container">
                 <h4>Length</h4>
                 <input

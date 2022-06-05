@@ -28,7 +28,7 @@ const propertySchema = new mongoose.Schema({
   },
   Status: {
     type: String,
-    default: "unsold",
+    default: "Unsold",
     required: true,
   },
   User: {

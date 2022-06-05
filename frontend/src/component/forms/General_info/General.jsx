@@ -30,7 +30,7 @@ navigate("/location")
 
         <div className="main">
           <form action="" className="form-basic" onSubmit={handleSubmit}>
-            <div className="form">
+            <div className="form-data1">
               <div className="form-container">
                 <h4>Name</h4>
                 <select className="input" name="cars">

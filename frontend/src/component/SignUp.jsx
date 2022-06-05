@@ -17,7 +17,7 @@ function Signup() {
     const data = {
       email:e.target.elements.email.value,
       password:e.target.elements.password.value,
-      UserID:parseInt(Math.random()*100000) 
+      UserID:parseInt(Math.random()*10000) 
     }
 
     console.log(data)
