@@ -16,7 +16,7 @@ const Header = ({ user }) => {
 
   return (
     <div className="header-container">
-      <div className="header-id">USER ID: {"PPID" + user.UserID} </div>
+      <div className="header-id">USER ID: {"06PPD" + user.UserID} </div>
       <div className="logout">
         <img className="user" src={userIcon} alt="user" />
 

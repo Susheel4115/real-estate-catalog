@@ -25,9 +25,16 @@ const PropertyInput = ({ user, data, setData }) => {
   const handleSubmit = async (e) => {
     // e.preventDefault();
     console.log("data");
-    const length = parseInt(e.target.elements.length.value);
-    const width = parseInt(e.target.elements.width.value);
-    const area = parseInt(length * width);
+
+    const length=parseInt(e.target.elements.length.value);
+    const width=parseInt(e.target.elements.width.value);
+    const area=parseInt(length*width);
+    console.log(area)
+// =======
+//     const length = parseInt(e.target.elements.length.value);
+//     const width = parseInt(e.target.elements.width.value);
+//     const area = parseInt(length * width);
+// >>>>>>> d075d1ff51ecdd69819dd13b8a9a964318009ab3
     // setArea(area);
     setData({ ...data, Area: e.target.elements.area.value });
     navigate("/General");
