@@ -4,9 +4,12 @@ import SideBar from "./common/SideBar";
 import Header from "./common/Header";
 import DataTable from "./DataTable";
 import "./CSS-property/userData.css";
+import { useNavigate } from "react-router-dom";
 
 const Property = ({user}) => {
+  const navigate = useNavigate();
   const [searchkey, setSearchKey] = useState("");
+  if(!localStorage.getItem("token"))  navigate("/")
   return (
     <div className="userData-container">
       <SideBar />
