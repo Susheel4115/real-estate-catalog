@@ -29,7 +29,7 @@ const startDB = async () => {
   try {
     await connectDB(process.env.MONGO_URL);
 
-    const port = process.env.PORT;
+    const port = process.env.PORT || 5005;
     app.listen(port, () => {
       console.log(`server is running and listening to port - ${port}`);
       console.log("DB connected");
