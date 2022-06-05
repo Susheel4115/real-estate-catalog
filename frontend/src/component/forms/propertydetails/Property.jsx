@@ -5,7 +5,6 @@ import Header from "../../common/Header";
 import { Link, useNavigate } from "react-router-dom";
 import Nav from "./Nav";
 
-
 const PropertyInput = ({ user, data, setData }) => {
   // const [area,setArea]=useState("");
   const [length, setLength] = useState("");
@@ -45,7 +44,7 @@ const PropertyInput = ({ user, data, setData }) => {
 
         <div className="main">
           <form action="" className="form-basic" onSubmit={handleSubmit}>
-            <div className="form">
+            <div className="form-data1">
               <div className="form-container">
                 <h4>Length</h4>
                 <input
@@ -55,7 +54,6 @@ const PropertyInput = ({ user, data, setData }) => {
                   onChange={(e) => {
                     setLength(e.target.value);
                   }}
-
                   className="input"
                   placeholder="Example: 1000"
                 />
@@ -63,11 +61,11 @@ const PropertyInput = ({ user, data, setData }) => {
                 <input
                   type="text"
                   id="area"
-
-                  value={String(calulate(length, width)) === String(NaN) ? 0 : calulate(length, width)}
-                  
-                  
-
+                  value={
+                    String(calulate(length, width)) === String(NaN)
+                      ? 0
+                      : calulate(length, width)
+                  }
                   placeholder="Example: 7500"
                   className="input"
                 />
@@ -148,7 +146,7 @@ const PropertyInput = ({ user, data, setData }) => {
 
             <div className="button">
               <Link to="/Basic">
-                <button className="btn1 ">Cancel</button>
+                <button className="btn1 ">Previous</button>
               </Link>
               <button className="btn2">Save & continue</button>
             </div>

@@ -18,27 +18,23 @@ const Basic = ({ user, data, setData }) => {
     // console.log(e.target.elements.Type.value)
     // console.log(e.target.elements.Price.value);
     try {
-
-    const PPID=parseInt(Math.random()*10000) ;
-    const Views=parseInt(Math.random()*10);
-    const Duration=parseInt(Math.random()*100);
-    // const day=round(Durtion/2)
-    var ppi=PPID.toString();
-    ppi="PPID"+ppi;
-      setData(
-        {...data,
-          Property:e.target.elements.Type.value,
-          PPID: ppi,
-          Views:Views,
-          Duration:Duration
-        }
-      )
-      navigate('/PropertyDetails')
+      const PPID = parseInt(Math.random() * 10000);
+      const Views = parseInt(Math.random() * 10);
+      const Duration = parseInt(Math.random() * 100);
+      // const day=round(Durtion/2)
+      var ppi = PPID.toString();
+      ppi = "PPID" + ppi;
+      setData({
+        ...data,
+        Property: e.target.elements.Type.value,
+        PPID: ppi,
+        Views: Views,
+        Duration: Duration,
+      });
+      navigate("/PropertyDetails");
     } catch (error) {
-      alert("error")
+      alert("error");
     }
-    
-
 
     // const data = {
     //   email:e.target.elements.email.value,
@@ -46,9 +42,7 @@ const Basic = ({ user, data, setData }) => {
     //   // UserID:parseInt(Math.random()*10000)
     // }
     // console.log(data)
-
   };
-
 
   return (
     <div className="basic">
@@ -59,13 +53,17 @@ const Basic = ({ user, data, setData }) => {
         <Nav />
         <div className="main">
           <form action="" className="form-basic" onSubmit={handleSubmit}>
-            <div className="form">
+            <div className="form-data1">
               <div className="form-container">
                 <h4>Property type</h4>
 
-                <select className="input" name="cars"
-                id="Type" value={Type} onChange={(e)=>setType(e.target.value)}>
-
+                <select
+                  className="input"
+                  name="cars"
+                  id="Type"
+                  value={Type}
+                  onChange={(e) => setType(e.target.value)}
+                >
                   <option value="volvo">Select Property type</option>
                   <option value="Flat">Flat</option>
                   <option value="House">House</option>
@@ -138,16 +136,24 @@ const Basic = ({ user, data, setData }) => {
             </div>
             <div className="button">
               <Link to="/property">
-                <button className="btn1 ">Cancel</button>
+                <button
+                  className="btn1"
+                  style={{ borderRadius: "40px", width: "7vw" }}
+                >
+                  Cancel
+                </button>
               </Link>
-              <button className="btn2">Save & continue</button>
+              <button
+                className="btn2"
+                style={{ borderRadius: "40px", width: "8vw" }}
+              >
+                Save & continue
+              </button>
             </div>
           </form>
         </div>
       </div>
     </div>
   );
-
 };
 export default Basic;
-

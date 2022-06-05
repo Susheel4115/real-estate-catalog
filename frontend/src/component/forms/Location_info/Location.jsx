@@ -6,7 +6,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 import Nav from "./Nav";
 
-
 const Location = ({ user, data }) => {
   console.log("data is here", data);
 
@@ -44,7 +43,7 @@ const Location = ({ user, data }) => {
         <Nav />
         <div className="main">
           <form action="" className="form-basic" onSubmit={handleSubmit}>
-            <div className="form">
+            <div className="form-data1">
               <div className="form-container">
                 <h4>Email</h4>
                 <input type="text" placeholder="Email" className="input" />
