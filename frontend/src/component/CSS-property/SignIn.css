@@ -68,8 +68,9 @@
   top: 585px;
 }
 
-.signup {
+#signup {
   /* margin-left: 35%; */
-  margin-top: 10%;
+  margin-top: 12%;
   text-align: center;
+  margin-left: 1vw;
 }
