@@ -13,11 +13,7 @@
   width: calc(100% - 0rem);
   background: rgba(225, 249, 244, 1);
   border-radius: 0px;
-  /* position: absolute; */
-  /* left: 20%; */
-  /* right: -0.31%; */
-  /* top: 9.76%; */
-  /* bottom: 87.96%; */
+
   background: #e1f9f4;
 }
 
@@ -28,36 +24,6 @@
   border-radius: 0px;
 } */
 
-/* th#days {
-  padding-right: 3rem;
-  position: absolute; */
-  /* left: 83.87%; */
-  /* right: 11.38%; */
-  /* top: 25.65%; */
-  /* bottom: 72.04%; */
-  /* font-family: "Source Sans Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 25px;
-  color: #284e91; */
-/* } */
-/* th#action {
-  font-family: "Source Sans Pro";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  width: 5rem;
-  line-height: 25px;
-  color: #284e91;
-  cursor: pointer;
-}
-.ppd {
-  margin-top: 5px;
-}
-.action {
-  cursor: pointer;
-} */
 
 
 

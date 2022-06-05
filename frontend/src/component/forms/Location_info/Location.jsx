@@ -4,6 +4,9 @@ import Header from "../../common/Header";
 import SideBar from "../../common/SideBar";
 import { Link, useNavigate } from "react-router-dom";
 
+import Nav from "./Nav";
+
+
 const Location = ({ user, data }) => {
   console.log("data is here", data);
 
@@ -36,7 +39,9 @@ const Location = ({ user, data }) => {
       <SideBar />
       <div className="headform">
         <Header user={user} />
+        <div className="rectangle"></div>
 
+        <Nav />
         <div className="main">
           <form action="" className="form-basic" onSubmit={handleSubmit}>
             <div className="form-data1">
