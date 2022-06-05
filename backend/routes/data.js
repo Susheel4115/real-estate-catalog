@@ -69,7 +69,7 @@ router.put("/property/:id", async (req, res) => {
     const id = req.params.id;
     const data = await Data.findOneAndUpdate(
       { _id: id },
-      { $set: { Status: "sold" } }
+      { $set: { Status: "Sold" } }
     );
 
     res.json({
