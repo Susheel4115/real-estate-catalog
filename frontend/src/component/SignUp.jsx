@@ -14,24 +14,27 @@ function Signup() {
     e.preventDefault();
     if (password !== confirmPassword) return alert("Password doesn't match");
     const data = {
-      email:e.target.elements.email.value,
-      password:e.target.elements.password.value,
-      UserID:parseInt(Math.random()*10000) 
-//       email: e.target.elements.email.value,
-//       password: e.target.elements.password.value,
-//       UserID: parseInt(Math.random() * 100000),
+      email: e.target.elements.email.value,
+      password: e.target.elements.password.value,
+      UserID: parseInt(Math.random() * 10000),
+      //       email: e.target.elements.email.value,
+      //       password: e.target.elements.password.value,
+      //       UserID: parseInt(Math.random() * 100000),
     };
     console.log(data);
     try {
-      const res = await axios.post(`http://localhost:5000/Signup`, data, {
-        withCredentials: true,
-      });
+      const res = await axios.post(
+        `https://realestate-10x-be.herokuapp.com/Signup`,
+        data,
+        {
+          withCredentials: true,
+        }
+      );
       console.log(res);
       navigate("/Signin");
     } catch (error) {
       alert(error.response.data.message);
     }
-   
   };
   return (
     <div className="sign-up-parent">
@@ -49,7 +52,7 @@ function Signup() {
             required
             onChange={(e) => setEmail(e.target.value)}
           />
-      
+
           <input
             className="password"
             type={showPassword ? "text" : "password"}

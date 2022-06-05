@@ -15,7 +15,7 @@ const Toggle = ({ obj, getData }) => {
       const path = obj._id;
       console.log(path);
       const response = await axios.put(
-        `http://localhost:5000/property/` + path,
+        process.env.REACT_APP_API + "/property" + path,
         obj,
         {
           withCredentials: true,
@@ -31,15 +31,25 @@ const Toggle = ({ obj, getData }) => {
   return (
     <div className="tabledats">
       <div className="ppid-row">{obj.PPID}</div>
-      <div className="image-row">< img className="img-static" src={image} alt="aj" /></div>
+      <div className="image-row">
+        <img className="img-static" src={image} alt="aj" />
+      </div>
       <div className="property-row">{obj.Property}</div>
       <div className="contact-row">{obj.Contact}</div>
       <div className="area-row">{obj.Area}</div>
       <div className="views-row">0{obj.Views}</div>
-      <div className="status-row"> <button className="status-button" onClick={() => handleSubmit(obj)}>{obj.Status}</button></div>
+      <div className="status-row">
+        {" "}
+        <button className="status-button" onClick={() => handleSubmit(obj)}>
+          {obj.Status}
+        </button>
+      </div>
       <div className="day-row">{obj.Duration}</div>
-      <div className="action-row"> <img className="action-eye" src={eye} alt="eye" /> <img  className="action-edit" src={edit} alt="edit" /></div>
-
+      <div className="action-row">
+        {" "}
+        <img className="action-eye" src={eye} alt="eye" />{" "}
+        <img className="action-edit" src={edit} alt="edit" />
+      </div>
     </div>
     // <tr>
     //   <td className="ppd ppdid">{obj.PPID}</td>
