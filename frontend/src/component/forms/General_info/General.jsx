@@ -36,7 +36,7 @@ const General = ({ user, data, setData }) => {
                 </select>
                 <h4>Posted by</h4>
                 <select className="input" name="cars">
-                  <option value="owner">posted by</option>
+                  <option value=""disabled selected hidden>posted by</option>
                   <option value="saab">broker</option>
                   <option value="saab">owner</option>
                 </select>
@@ -58,6 +58,7 @@ const General = ({ user, data, setData }) => {
                 <input
                   type="text"
                   id="contact"
+                  required
                   value={contact}
                   onChange={(e) => setConact(e.target.value)}
                   placeholder="enter your mobile number"

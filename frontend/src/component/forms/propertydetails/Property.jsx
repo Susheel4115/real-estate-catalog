@@ -57,6 +57,7 @@ const PropertyInput = ({ user, data, setData }) => {
                 <input
                   type="number"
                   id="length"
+                  required
                   value={length}
                   onChange={(e) => {
                     setLength(e.target.value);
@@ -108,6 +109,7 @@ const PropertyInput = ({ user, data, setData }) => {
                 <input
                   type="number"
                   id="width"
+                  required
                   value={width}
                   onChange={(e) => {
                     setWidth(e.target.value);

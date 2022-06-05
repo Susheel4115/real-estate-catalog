@@ -81,7 +81,7 @@ function Signin({ setUser }) {
           </button>
           <Link to="/Signup" style={{ fontWeight: "bold" }}>
             {" "}
-            <p className="signup">SignUp</p>
+            <p id="signup">SignUp</p>
           </Link>
         </form>
       </div>

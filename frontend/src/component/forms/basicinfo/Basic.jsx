@@ -61,10 +61,11 @@ const Basic = ({ user, data, setData }) => {
                   className="input"
                   name="cars"
                   id="Type"
+                  required
                   value={Type}
                   onChange={(e) => setType(e.target.value)}
                 >
-                  <option value="volvo">Select Property type</option>
+                  <option value=""disabled selected hidden>Select Property type</option>
                   <option value="Flat">Flat</option>
                   <option value="House">House</option>
                   <option value="Plot">Plot</option>
