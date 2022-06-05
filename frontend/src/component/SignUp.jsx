@@ -17,20 +17,26 @@ function Signup() {
     if (password !== confirmPassword) return alert("Password doesn't match");
 
     const data = {
-      email: e.target.elements.email.value,
-      password: e.target.elements.password.value,
-      UserID: parseInt(Math.random() * 100000),
-    };
 
-    console.log(data);
-    try {
-      const res = await axios.post(`http://localhost:5000/Signup`, data, {
-        withCredentials: true,
-      });
-      console.log(res);
-      navigate("/Signin");
-    } catch (error) {
-      alert(error.response.data.message);
+      email:e.target.elements.email.value,
+      password:e.target.elements.password.value,
+      UserID:parseInt(Math.random()*10000) 
+
+//       email: e.target.elements.email.value,
+//       password: e.target.elements.password.value,
+//       UserID: parseInt(Math.random() * 100000),
+//     };
+
+//     console.log(data);
+//     try {
+//       const res = await axios.post(`http://localhost:5000/Signup`, data, {
+//         withCredentials: true,
+//       });
+//       console.log(res);
+//       navigate("/Signin");
+//     } catch (error) {
+//       alert(error.response.data.message);
+// >>>>>>> d075d1ff51ecdd69819dd13b8a9a964318009ab3
     }
 
     // const JsonResponse = await fetch("http://localhost:5000/Signup", {

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // import Basic from "./component/forms/basicinfo/Basic";

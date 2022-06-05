@@ -24,7 +24,7 @@ const Basic = ({ user, data, setData }) => {
     const Duration=parseInt(Math.random()*100);
     // const day=round(Durtion/2)
     var ppi=PPID.toString();
-    ppi="PPID"+ppi;
+    ppi="PPD"+ppi;
       setData(
         {...data,
           Property:e.target.elements.Type.value,
@@ -59,7 +59,7 @@ const Basic = ({ user, data, setData }) => {
         <Nav />
         <div className="main">
           <form action="" className="form-basic" onSubmit={handleSubmit}>
-            <div className="form">
+            <div className="form-data1">
               <div className="form-container">
                 <h4>Property type</h4>
 

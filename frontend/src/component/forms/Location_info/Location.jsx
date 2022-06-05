@@ -44,7 +44,7 @@ const Location = ({ user, data }) => {
         <Nav />
         <div className="main">
           <form action="" className="form-basic" onSubmit={handleSubmit}>
-            <div className="form">
+            <div className="form-data1">
               <div className="form-container">
                 <h4>Email</h4>
                 <input type="text" placeholder="Email" className="input" />
